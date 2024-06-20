@@ -70,6 +70,7 @@ namespace Dermafine
                         UserSession.Usuario = usuario;
                         UserSession.NomeCompleto = get.Value.NomeCompleto;
                         UserSession.Cidade = get.Value.Cidade;
+                        UserSession.pontuacaoTotal = get.Value.pontuacaoTotal;
 
                         this.Hide();
                         frmPrincipal inicio = new frmPrincipal();

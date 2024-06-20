@@ -1,4 +1,5 @@
 ﻿using Dermafine.Classes;
+using Dermafine.Formularios.Principal;
 using FireSharp.Config;
 using FireSharp.Interfaces;
 using FireSharp.Response;
@@ -269,64 +270,118 @@ namespace Dermafine.Formularios.Pedido
 
         private async void btnFinalizar_Click(object sender, EventArgs e)
         {
+            //// Verificar se há itens no carrinho
+            //if (carrinho.Count == 0)
+            //{
+            //    MessageBox.Show("Adicione ao menos um produto ao carrinho antes de finalizar o pedido.");
+            //    return;
+            //}
+
+            //// Obter informações do usuário a partir da UserSession
+            //var usuario = new
+            //{
+            //    Usuario = UserSession.Usuario,
+            //    NomeCompleto = UserSession.NomeCompleto,
+            //    Cidade = UserSession.Cidade
+            //};
+
+            //// Calcular a pontuação total do pedido
+            //int pontuacaoTotal = carrinho.Sum(item => item.Produto.Pontuacao * item.Quantidade);
+
+            //var atendimento = new Atendimento
+            //{
+            //    NomeUsuario = usuario.Usuario,
+            //    NomeCompleto = usuario.NomeCompleto,
+            //    Data = DateTime.Now.ToString("o"), // Formato ISO 8601
+            //    Pontos = pontuacaoTotal,
+            //    Itens = new List<ItemAtendimento>()
+            //};
+
+            //foreach (var item in carrinho)
+            //{
+            //    var itemAtendimento = new ItemAtendimento
+            //    {
+            //        Categoria = item.Produto.Categoria,
+            //        NomeProduto = item.Produto.NomeProduto,
+            //        Quantidade = item.Quantidade,
+            //        Pontos = item.Produto.Pontuacao * item.Quantidade
+            //    };
+            //    atendimento.Itens.Add(itemAtendimento);
+            //}
+
+            //try
+            //{
+            //    var response = await client.PushAsync("atendimentos", atendimento);
+
+            //    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+            //    {
+            //        MessageBox.Show("Pedido finalizado com sucesso!");
+            //        carrinho.Clear();
+            //        AtualizarExibicaoCarrinho();
+            //        LimparCampos();
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Erro ao finalizar o pedido. Tente novamente.");
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Erro ao finalizar o pedido: " + ex.Message);
+            //}
             // Verificar se há itens no carrinho
             if (carrinho.Count == 0)
             {
-                MessageBox.Show("Adicione ao menos um produto ao carrinho antes de finalizar o pedido.");
+                MessageBox.Show("Adicione itens ao carrinho antes de finalizar o atendimento.");
                 return;
             }
 
-            // Obter informações do usuário a partir da UserSession
-            var usuario = new
-            {
-                Usuario = UserSession.Usuario,
-                NomeCompleto = UserSession.NomeCompleto,
-                Cidade = UserSession.Cidade
-            };
-
-            // Calcular a pontuação total do pedido
+            // Calcular a pontuação total do atendimento
             int pontuacaoTotal = carrinho.Sum(item => item.Produto.Pontuacao * item.Quantidade);
-
-            var atendimento = new Atendimento
-            {
-                NomeUsuario = usuario.Usuario,
-                NomeCompleto = usuario.NomeCompleto,
-                Data = DateTime.Now.ToString("o"), // Formato ISO 8601
-                Pontos = pontuacaoTotal,
-                Itens = new List<ItemAtendimento>()
-            };
-
-            foreach (var item in carrinho)
-            {
-                var itemAtendimento = new ItemAtendimento
-                {
-                    Categoria = item.Produto.Categoria,
-                    NomeProduto = item.Produto.NomeProduto,
-                    Quantidade = item.Quantidade,
-                    Pontos = item.Produto.Pontuacao * item.Quantidade
-                };
-                atendimento.Itens.Add(itemAtendimento);
-            }
 
             try
             {
-                var response = await client.PushAsync("atendimentos", atendimento);
+                Atendimento atendimento = new Atendimento
+                {
+                    NomeUsuario = UserSession.Usuario,
+                    NomeCompleto = UserSession.NomeCompleto,
+                    Itens = carrinho.Select(item => new ItemAtendimento
+                    {
+                        Categoria = item.Produto.Categoria,
+                        NomeProduto = item.Produto.NomeProduto,
+                        Quantidade = item.Quantidade,
+                        Pontos = item.Produto.Pontuacao * item.Quantidade
+                    }).ToList(),
+                    Data = DateTime.Now.ToString("yyyyMMddHHmmss"), // formato string para Data
+                    Pontos = carrinho.Sum(item => item.Produto.Pontuacao * item.Quantidade)
+                };
 
-                if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                // Salvar o atendimento no Firebase
+                SetResponse response = await client.SetAsync("atendimentos/" + atendimento.Data, atendimento);
+
+                // Atualizar a pontuação total do usuário
+                UserSession.pontuacaoTotal += atendimento.Pontos;
+
+                // Salvar a pontuação total atualizada no Firebase
+                await client.SetAsync("usuarios/" + UserSession.Usuario + "/pontuacaoTotal", UserSession.pontuacaoTotal);
+
+                // Atualizar a label no frmPrincipal
+                frmPrincipal mainForm = Application.OpenForms.OfType<frmPrincipal>().FirstOrDefault();
+                if (mainForm != null)
                 {
-                    MessageBox.Show("Pedido finalizado com sucesso!");
-                    carrinho.Clear();
-                    AtualizarExibicaoCarrinho();
-                    LimparCampos();
+                    mainForm.Invoke(new Action(() =>
+                    {
+                        mainForm.AtualizarPontuacaoTotal(UserSession.pontuacaoTotal);
+                    }));
                 }
-                else
-                {
-                    MessageBox.Show("Erro ao finalizar o pedido. Tente novamente.");
-                }
+
+                // Limpar o carrinho e atualizar a exibição
+                carrinho.Clear();
+                AtualizarExibicaoCarrinho();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao finalizar o pedido: " + ex.Message);
+                MessageBox.Show("Erro ao finalizar o atendimento: " + ex.Message);
             }
         }
 

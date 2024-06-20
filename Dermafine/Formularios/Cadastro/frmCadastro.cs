@@ -64,7 +64,7 @@ namespace Dermafine.Formularios.Cadastro
                 Cidade = txtCidade.Text,
                 Usuario = txtUsuario.Text,
                 Senha = txtSenha.Text,
-                PontuacaoTotal = 0
+                pontuacaoTotal = 0
             };
 
             FirebaseResponse response = await client.SetAsync("usuarios/" + txtUsuario.Text, register);

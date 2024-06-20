@@ -48,7 +48,7 @@
             this.btnFinalizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFinalizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFinalizar.ForeColor = System.Drawing.Color.White;
-            this.btnFinalizar.Location = new System.Drawing.Point(371, 345);
+            this.btnFinalizar.Location = new System.Drawing.Point(485, 345);
             this.btnFinalizar.Margin = new System.Windows.Forms.Padding(2);
             this.btnFinalizar.Name = "btnFinalizar";
             this.btnFinalizar.Size = new System.Drawing.Size(124, 33);
@@ -72,7 +72,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(408, 80);
+            this.label5.Location = new System.Drawing.Point(481, 81);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(92, 20);
@@ -86,7 +86,7 @@
             this.txtNomeProduto.Location = new System.Drawing.Point(26, 102);
             this.txtNomeProduto.Margin = new System.Windows.Forms.Padding(2);
             this.txtNomeProduto.Name = "txtNomeProduto";
-            this.txtNomeProduto.Size = new System.Drawing.Size(366, 24);
+            this.txtNomeProduto.Size = new System.Drawing.Size(442, 24);
             this.txtNomeProduto.TabIndex = 4;
             // 
             // cmbProduto
@@ -96,7 +96,7 @@
             this.cmbProduto.Location = new System.Drawing.Point(26, 45);
             this.cmbProduto.Margin = new System.Windows.Forms.Padding(2);
             this.cmbProduto.Name = "cmbProduto";
-            this.cmbProduto.Size = new System.Drawing.Size(469, 26);
+            this.cmbProduto.Size = new System.Drawing.Size(583, 26);
             this.cmbProduto.TabIndex = 10;
             this.cmbProduto.SelectedIndexChanged += new System.EventHandler(this.cmbProduto_SelectedIndexChanged);
             // 
@@ -118,7 +118,7 @@
             this.btnAdicionarAoCarrinho.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdicionarAoCarrinho.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdicionarAoCarrinho.ForeColor = System.Drawing.Color.White;
-            this.btnAdicionarAoCarrinho.Location = new System.Drawing.Point(371, 142);
+            this.btnAdicionarAoCarrinho.Location = new System.Drawing.Point(485, 144);
             this.btnAdicionarAoCarrinho.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdicionarAoCarrinho.Name = "btnAdicionarAoCarrinho";
             this.btnAdicionarAoCarrinho.Size = new System.Drawing.Size(124, 33);
@@ -130,10 +130,10 @@
             // numQuantidade
             // 
             this.numQuantidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numQuantidade.Location = new System.Drawing.Point(412, 102);
+            this.numQuantidade.Location = new System.Drawing.Point(485, 103);
             this.numQuantidade.Margin = new System.Windows.Forms.Padding(2);
             this.numQuantidade.Name = "numQuantidade";
-            this.numQuantidade.Size = new System.Drawing.Size(83, 24);
+            this.numQuantidade.Size = new System.Drawing.Size(124, 24);
             this.numQuantidade.TabIndex = 15;
             // 
             // dataGridViewCarrinho
@@ -145,7 +145,7 @@
             this.dataGridViewCarrinho.Name = "dataGridViewCarrinho";
             this.dataGridViewCarrinho.RowHeadersWidth = 51;
             this.dataGridViewCarrinho.RowTemplate.Height = 24;
-            this.dataGridViewCarrinho.Size = new System.Drawing.Size(469, 135);
+            this.dataGridViewCarrinho.Size = new System.Drawing.Size(583, 135);
             this.dataGridViewCarrinho.TabIndex = 16;
             this.dataGridViewCarrinho.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dataGridViewCarrinho_CellBeginEdit);
             // 

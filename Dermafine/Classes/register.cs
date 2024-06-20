@@ -6,6 +6,6 @@
         public string Cidade { get; set; }
         public string Usuario { get; set; }
         public string Senha { get; set; }
-        public int PontuacaoTotal { get; set; }
+        public int pontuacaoTotal { get; set; }
     }
 }

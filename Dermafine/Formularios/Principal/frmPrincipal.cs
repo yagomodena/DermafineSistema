@@ -64,12 +64,12 @@ namespace Dermafine.Formularios.Principal
             OpenChildForm(new frmConsulta(), sender);
         }
 
-        private void frmPrincipal_Load(object sender, EventArgs e)
+        public void frmPrincipal_Load(object sender, EventArgs e)
         {
             // Exibir o nome do usuário logado
             lblUsuarioLogado.Text = "Usuário: " + UserSession.Usuario;
             lblNomeUsuario.Text = "Nome: " + UserSession.NomeCompleto;
-            lblPontuacaoTotal.Text = "Pontuação total: " + UserSession.PontuacaoTotal;
+            lblPontuacaoTotal.Text = "Pontuação total: " + UserSession.pontuacaoTotal;
 
             if (UserSession.Usuario == "dermafine" && UserSession.NomeCompleto == "Dermafine ADMIN")
             {
@@ -77,6 +77,10 @@ namespace Dermafine.Formularios.Principal
                 btnDashboard.Visible = true;
                 btnPontuacao.Visible = true;
             }
+        }
+        public void AtualizarPontuacaoTotal(int novaPontuacao)
+        {
+            lblPontuacaoTotal.Text = "Pontuação total: " + novaPontuacao;
         }
 
         private void btnADMIN_Click(object sender, EventArgs e)
