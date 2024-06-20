@@ -98,12 +98,19 @@ namespace Dermafine.Formularios.ADMIN.Usuarios
 
         private async void dgvUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Verificar se o clique foi na coluna do botão de pagamento
-            if (e.ColumnIndex == dgvUsuarios.Columns["Pagamento"].Index && e.RowIndex >= 0 && !isCellClickEventHandled)
+            // Verificar se o clique foi na coluna do botão de pagamento e se não é uma linha vazia
+            if (e.RowIndex >= 0 && e.ColumnIndex == dgvUsuarios.Columns["Pagamento"].Index && !isCellClickEventHandled)
             {
                 isCellClickEventHandled = true;  // Define o flag para evitar múltiplos disparos
 
-                string nomeUsuario = dgvUsuarios.Rows[e.RowIndex].Cells["NomeCompleto"].Value.ToString();
+                string nomeUsuario = dgvUsuarios.Rows[e.RowIndex].Cells["NomeCompleto"].Value?.ToString();
+                if (string.IsNullOrEmpty(nomeUsuario))
+                {
+                    MessageBox.Show("Selecione um usuário válido.");
+                    isCellClickEventHandled = false;
+                    return;
+                }
+
                 DialogResult result = MessageBox.Show($"Deseja realmente fazer o pagamento para {nomeUsuario}?", "Confirmação de Pagamento", MessageBoxButtons.YesNo);
 
                 if (result == DialogResult.Yes)
@@ -161,6 +168,10 @@ namespace Dermafine.Formularios.ADMIN.Usuarios
                 frmPrincipal mainForm = Application.OpenForms.OfType<frmPrincipal>().FirstOrDefault();
                 if (mainForm != null)
                 {
+                    // Atualizar UserSession.pontuacaoTotal
+                    UserSession.pontuacaoTotal = usuario.pontuacaoTotal;
+
+                    // Invocar a atualização da interface no thread principal
                     mainForm.Invoke(new Action(() =>
                     {
                         mainForm.AtualizarPontuacaoTotal(UserSession.pontuacaoTotal);
