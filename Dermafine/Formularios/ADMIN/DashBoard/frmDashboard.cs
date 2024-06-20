@@ -68,7 +68,8 @@ namespace Dermafine.Formularios.ADMIN.DashBoard
             {
                 HeaderText = "Data",
                 DataPropertyName = "Data",
-                AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+                AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells,
+                DefaultCellStyle = new DataGridViewCellStyle { Format = "dd/MM/yyyy" } // Formato de data desejado (sem hora)
             };
 
             var colNomeCompleto = new DataGridViewTextBoxColumn
@@ -106,12 +107,20 @@ namespace Dermafine.Formularios.ADMIN.DashBoard
                 AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
             };
 
+            var colPontuacao = new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Pontuação",
+                DataPropertyName = "Pontuacao",
+                AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+            };
+
             dgvAtendimentos.Columns.Add(colData);
             dgvAtendimentos.Columns.Add(colNomeCompleto);
             dgvAtendimentos.Columns.Add(colCidade);
             dgvAtendimentos.Columns.Add(colCategoria);
             dgvAtendimentos.Columns.Add(colNomeProduto);
             dgvAtendimentos.Columns.Add(colQuantidade);
+            dgvAtendimentos.Columns.Add(colPontuacao);
         }
 
         private async Task CarregarFiltros()
@@ -221,8 +230,9 @@ namespace Dermafine.Formularios.ADMIN.DashBoard
                             var usuarioResponse = await client.GetAsync($"usuarios/{atendimento.NomeUsuario}");
                             var usuario = usuarioResponse.ResultAs<register>();
 
+                            // Converter a data do atendimento para DateTime
                             DateTime dataAtendimento;
-                            bool dataValida = DateTime.TryParse(atendimento.Data, out dataAtendimento);
+                            bool dataValida = DateTime.TryParseExact(atendimento.Data, "yyyyMMddHHmmss", null, System.Globalization.DateTimeStyles.None, out dataAtendimento);
 
                             var atendimentoViewModel = new AtendimentoViewModel
                             {
@@ -231,7 +241,8 @@ namespace Dermafine.Formularios.ADMIN.DashBoard
                                 Categoria = item.Categoria,
                                 NomeProduto = item.NomeProduto,
                                 Quantidade = item.Quantidade,
-                                Data = dataValida ? dataAtendimento : DateTime.MinValue // Tratar data inválida
+                                Pontuacao = item.Pontos,
+                                Data = dataValida ? dataAtendimento.Date : DateTime.MinValue.Date // Apenas a parte da data, sem a hora
                             };
 
                             atendimentos.Add(atendimentoViewModel);
@@ -254,6 +265,7 @@ namespace Dermafine.Formularios.ADMIN.DashBoard
             public string Categoria { get; set; }
             public string NomeProduto { get; set; }
             public int Quantidade { get; set; }
+            public int Pontuacao { get; set; }
             public DateTime Data { get; set; }
         }
 
@@ -305,6 +317,11 @@ namespace Dermafine.Formularios.ADMIN.DashBoard
         }
 
         private async void dtpDataFinal_ValueChanged(object sender, EventArgs e)
+        {
+            await AplicarFiltros();
+        }
+
+        private async void btnPesquisar_Click(object sender, EventArgs e)
         {
             await AplicarFiltros();
         }

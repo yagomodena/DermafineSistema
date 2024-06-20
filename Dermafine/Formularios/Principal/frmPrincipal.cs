@@ -1,7 +1,6 @@
 ﻿using Dermafine.Classes;
 using Dermafine.Formularios.ADMIN;
 using Dermafine.Formularios.ADMIN.DashBoard;
-using Dermafine.Formularios.ADMIN.Pontuação;
 using Dermafine.Formularios.Consulta;
 using Dermafine.Formularios.Pedido;
 using Dermafine.Formularios.Produtos;
@@ -75,7 +74,6 @@ namespace Dermafine.Formularios.Principal
             {
                 btnADMIN.Visible = true;
                 btnDashboard.Visible = true;
-                btnPontuacao.Visible = true;
             }
         }
         public void AtualizarPontuacaoTotal(int novaPontuacao)
@@ -101,11 +99,6 @@ namespace Dermafine.Formularios.Principal
         private void btnDashboard_Click(object sender, EventArgs e)
         {
             OpenChildForm(new frmDashboard(), sender);
-        }
-
-        private void btnPontuacao_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new frmPontuacao(), sender);
         }
     }
 }

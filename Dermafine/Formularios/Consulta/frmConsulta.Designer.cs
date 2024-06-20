@@ -95,6 +95,7 @@
             this.dataGridViewAtendimentos.Location = new System.Drawing.Point(0, 77);
             this.dataGridViewAtendimentos.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewAtendimentos.Name = "dataGridViewAtendimentos";
+            this.dataGridViewAtendimentos.ReadOnly = true;
             this.dataGridViewAtendimentos.RowHeadersWidth = 51;
             this.dataGridViewAtendimentos.RowTemplate.Height = 24;
             this.dataGridViewAtendimentos.Size = new System.Drawing.Size(734, 423);

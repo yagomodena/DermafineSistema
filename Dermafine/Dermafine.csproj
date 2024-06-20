@@ -135,12 +135,6 @@
     <Compile Include="Formularios\ADMIN\frmADMIN.Designer.cs">
       <DependentUpon>frmADMIN.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\ADMIN\Pontuação\frmPontuacao.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\ADMIN\Pontuação\frmPontuacao.Designer.cs">
-      <DependentUpon>frmPontuacao.cs</DependentUpon>
-    </Compile>
     <Compile Include="Formularios\ADMIN\Produtos\Cadastro\frmCadastroProdutos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -250,9 +244,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ADMIN\frmADMIN.resx">
       <DependentUpon>frmADMIN.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\ADMIN\Pontuação\frmPontuacao.resx">
-      <DependentUpon>frmPontuacao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ADMIN\Produtos\Cadastro\frmCadastroProdutos.resx">
       <DependentUpon>frmCadastroProdutos.cs</DependentUpon>

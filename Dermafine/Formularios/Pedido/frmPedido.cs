@@ -153,7 +153,8 @@ namespace Dermafine.Formularios.Pedido
 
             foreach (var item in carrinho)
             {
-                dataGridViewCarrinho.Rows.Add(item.Produto.Categoria, item.Produto.NomeProduto, item.Quantidade);
+                int pontuacaoTotalItem = item.Produto.Pontuacao * item.Quantidade;
+                dataGridViewCarrinho.Rows.Add(item.Produto.Categoria, item.Produto.NomeProduto, item.Quantidade, pontuacaoTotalItem);
             }
         }
 
@@ -203,6 +204,36 @@ namespace Dermafine.Formularios.Pedido
 
         private void dataGridViewCarrinho_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
+            //// Verificar se a célula editada está na coluna de quantidade e se a linha não está vazia
+            //if (e.ColumnIndex == dataGridViewCarrinho.Columns["Quantidade"].Index &&
+            //    dataGridViewCarrinho.Rows[e.RowIndex].Cells["NomeProduto"].Value != null)
+            //{
+            //    // Obter o nome do produto da linha editada
+            //    string nomeProduto = dataGridViewCarrinho.Rows[e.RowIndex].Cells["NomeProduto"].Value.ToString();
+
+            //    // Obter o valor editado da célula de quantidade
+            //    int novaQuantidade;
+            //    if (int.TryParse(dataGridViewCarrinho.Rows[e.RowIndex].Cells["Quantidade"].Value.ToString(), out novaQuantidade))
+            //    {
+            //        // Se a nova quantidade for zero, definir para 1
+            //        if (novaQuantidade == 0)
+            //        {
+            //            dataGridViewCarrinho.Rows[e.RowIndex].Cells["Quantidade"].Value = 1;
+            //            MessageBox.Show("A quantidade não pode ser zero. O valor foi ajustado para 1.");
+            //        }
+
+            //        // Atualizar a quantidade no carrinho
+            //        var itemAtualizar = carrinho.FirstOrDefault(item => item.Produto.NomeProduto == nomeProduto);
+            //        if (itemAtualizar != null)
+            //        {
+            //            itemAtualizar.Quantidade = novaQuantidade;
+            //        }
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Por favor, insira um valor numérico válido para a quantidade.");
+            //    }
+            //}
             // Verificar se a célula editada está na coluna de quantidade e se a linha não está vazia
             if (e.ColumnIndex == dataGridViewCarrinho.Columns["Quantidade"].Index &&
                 dataGridViewCarrinho.Rows[e.RowIndex].Cells["NomeProduto"].Value != null)
@@ -219,6 +250,7 @@ namespace Dermafine.Formularios.Pedido
                     {
                         dataGridViewCarrinho.Rows[e.RowIndex].Cells["Quantidade"].Value = 1;
                         MessageBox.Show("A quantidade não pode ser zero. O valor foi ajustado para 1.");
+                        novaQuantidade = 1;
                     }
 
                     // Atualizar a quantidade no carrinho
@@ -226,12 +258,27 @@ namespace Dermafine.Formularios.Pedido
                     if (itemAtualizar != null)
                     {
                         itemAtualizar.Quantidade = novaQuantidade;
+
+                        // Recalcular a pontuação total do item
+                        int pontuacaoTotalItem = itemAtualizar.Produto.Pontuacao * novaQuantidade;
+                        dataGridViewCarrinho.Rows[e.RowIndex].Cells["Pontuacao"].Value = pontuacaoTotalItem;
                     }
+
+                    // Atualizar a pontuação total do atendimento
+                    CalcularPontuacaoTotalAtendimento();
                 }
                 else
                 {
                     MessageBox.Show("Por favor, insira um valor numérico válido para a quantidade.");
                 }
+            }
+        }
+        private void CalcularPontuacaoTotalAtendimento()
+        {
+            int pontuacaoTotal = 0;
+            foreach (var item in carrinho)
+            {
+                pontuacaoTotal += item.Produto.Pontuacao * item.Quantidade;
             }
         }
 
@@ -270,66 +317,6 @@ namespace Dermafine.Formularios.Pedido
 
         private async void btnFinalizar_Click(object sender, EventArgs e)
         {
-            //// Verificar se há itens no carrinho
-            //if (carrinho.Count == 0)
-            //{
-            //    MessageBox.Show("Adicione ao menos um produto ao carrinho antes de finalizar o pedido.");
-            //    return;
-            //}
-
-            //// Obter informações do usuário a partir da UserSession
-            //var usuario = new
-            //{
-            //    Usuario = UserSession.Usuario,
-            //    NomeCompleto = UserSession.NomeCompleto,
-            //    Cidade = UserSession.Cidade
-            //};
-
-            //// Calcular a pontuação total do pedido
-            //int pontuacaoTotal = carrinho.Sum(item => item.Produto.Pontuacao * item.Quantidade);
-
-            //var atendimento = new Atendimento
-            //{
-            //    NomeUsuario = usuario.Usuario,
-            //    NomeCompleto = usuario.NomeCompleto,
-            //    Data = DateTime.Now.ToString("o"), // Formato ISO 8601
-            //    Pontos = pontuacaoTotal,
-            //    Itens = new List<ItemAtendimento>()
-            //};
-
-            //foreach (var item in carrinho)
-            //{
-            //    var itemAtendimento = new ItemAtendimento
-            //    {
-            //        Categoria = item.Produto.Categoria,
-            //        NomeProduto = item.Produto.NomeProduto,
-            //        Quantidade = item.Quantidade,
-            //        Pontos = item.Produto.Pontuacao * item.Quantidade
-            //    };
-            //    atendimento.Itens.Add(itemAtendimento);
-            //}
-
-            //try
-            //{
-            //    var response = await client.PushAsync("atendimentos", atendimento);
-
-            //    if (response.StatusCode == System.Net.HttpStatusCode.OK)
-            //    {
-            //        MessageBox.Show("Pedido finalizado com sucesso!");
-            //        carrinho.Clear();
-            //        AtualizarExibicaoCarrinho();
-            //        LimparCampos();
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Erro ao finalizar o pedido. Tente novamente.");
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("Erro ao finalizar o pedido: " + ex.Message);
-            //}
-            // Verificar se há itens no carrinho
             if (carrinho.Count == 0)
             {
                 MessageBox.Show("Adicione itens ao carrinho antes de finalizar o atendimento.");
@@ -353,7 +340,7 @@ namespace Dermafine.Formularios.Pedido
                         Pontos = item.Produto.Pontuacao * item.Quantidade
                     }).ToList(),
                     Data = DateTime.Now.ToString("yyyyMMddHHmmss"), // formato string para Data
-                    Pontos = carrinho.Sum(item => item.Produto.Pontuacao * item.Quantidade)
+                    Pontos = pontuacaoTotal // já calculando a pontuação total aqui
                 };
 
                 // Salvar o atendimento no Firebase

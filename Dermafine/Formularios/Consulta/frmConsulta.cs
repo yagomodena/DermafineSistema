@@ -42,6 +42,12 @@ namespace Dermafine.Formularios.Consulta
                 // Adicionar o item "Todos" à combobox
                 cmbProduto.Items.Add("Todos");
 
+                // Selecionar "Todos" como padrão
+                cmbProduto.SelectedItem = "Todos";
+
+                // Definir o item "Todos" como selecionado por padrão
+                cmbProduto.SelectedIndex = 0;
+
                 // Carregar categorias, produtos e atendimentos
                 await CarregarProdutos();
                 await CarregarAtendimentos();
@@ -58,10 +64,7 @@ namespace Dermafine.Formularios.Consulta
             dataGridViewAtendimentos.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 11);
 
             // Definir o tamanho da fonte para os títulos das colunas
-            dataGridViewAtendimentos.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12, FontStyle.Bold);
-
-            // Definir o item "Todos" como selecionado por padrão
-            cmbProduto.SelectedIndex = 0;
+            dataGridViewAtendimentos.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12, FontStyle.Bold);            
         }
 
         private async Task CarregarProdutos()
@@ -106,12 +109,28 @@ namespace Dermafine.Formularios.Consulta
 
                 var atendimentos = response.ResultAs<Dictionary<string, Atendimento>>();
 
-                var atendimentosUsuario = atendimentos
-                    .Where(a => a.Value.NomeUsuario == usuarioLogado)
-                    .Select(a => a.Value)
-                    .ToList();
+                // Filtrar atendimentos com base no produto selecionado
+                string produtoSelecionado = cmbProduto.SelectedItem.ToString();
+                List<Atendimento> atendimentosFiltrados;
 
-                ExibirAtendimentos(atendimentosUsuario);
+                if (produtoSelecionado == "Todos")
+                {
+                    // Se "Todos" estiver selecionado, mostrar todos os atendimentos do usuário
+                    atendimentosFiltrados = atendimentos
+                        .Where(a => a.Value.NomeUsuario == usuarioLogado)
+                        .Select(a => a.Value)
+                        .ToList();
+                }
+                else
+                {
+                    // Filtrar atendimentos apenas para o produto selecionado
+                    atendimentosFiltrados = atendimentos
+                        .Where(a => a.Value.NomeUsuario == usuarioLogado && a.Value.Itens.Any(item => item.NomeProduto == produtoSelecionado))
+                        .Select(a => a.Value)
+                        .ToList();
+                }
+
+                ExibirAtendimentos(atendimentosFiltrados);
             }
             catch (Exception ex)
             {
@@ -139,7 +158,7 @@ namespace Dermafine.Formularios.Consulta
                 {
                     // Tentar converter a string para DateTime
                     DateTime dataAtendimento;
-                    bool dataValida = DateTime.TryParse(atendimento.Data, out dataAtendimento);
+                    bool dataValida = DateTime.TryParseExact(atendimento.Data, "yyyyMMddHHmmss", null, System.Globalization.DateTimeStyles.None, out dataAtendimento);
 
                     dataGridViewAtendimentos.Rows.Add(
                         atendimento.NomeCompleto,
@@ -162,5 +181,4 @@ namespace Dermafine.Formularios.Consulta
         {
             await CarregarAtendimentos();
         }        
-    }
-}
+    }}

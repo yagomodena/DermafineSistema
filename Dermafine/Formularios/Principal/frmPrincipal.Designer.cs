@@ -32,11 +32,11 @@
             this.btnProdutos = new System.Windows.Forms.Button();
             this.btnConsulta = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblPontuacaoTotal = new System.Windows.Forms.Label();
             this.lblPontuacao = new System.Windows.Forms.Label();
             this.lblNomeUsuario = new System.Windows.Forms.Label();
             this.lblUsuarioLogado = new System.Windows.Forms.Label();
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.btnPontuacao = new System.Windows.Forms.Button();
             this.btnADMIN = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.btnPedido = new System.Windows.Forms.Button();
@@ -46,7 +46,6 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.panelExibir = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lblPontuacaoTotal = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -105,6 +104,17 @@
             this.panel1.Size = new System.Drawing.Size(1061, 37);
             this.panel1.TabIndex = 2;
             // 
+            // lblPontuacaoTotal
+            // 
+            this.lblPontuacaoTotal.AutoSize = true;
+            this.lblPontuacaoTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPontuacaoTotal.ForeColor = System.Drawing.Color.White;
+            this.lblPontuacaoTotal.Location = new System.Drawing.Point(530, 10);
+            this.lblPontuacaoTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPontuacaoTotal.Name = "lblPontuacaoTotal";
+            this.lblPontuacaoTotal.Size = new System.Drawing.Size(0, 17);
+            this.lblPontuacaoTotal.TabIndex = 11;
+            // 
             // lblPontuacao
             // 
             this.lblPontuacao.AutoSize = true;
@@ -140,7 +150,6 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.panelMenu.Controls.Add(this.btnPontuacao);
             this.panelMenu.Controls.Add(this.btnADMIN);
             this.panelMenu.Controls.Add(this.btnDashboard);
             this.panelMenu.Controls.Add(this.btnConsulta);
@@ -153,24 +162,6 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(165, 521);
             this.panelMenu.TabIndex = 3;
-            // 
-            // btnPontuacao
-            // 
-            this.btnPontuacao.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPontuacao.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnPontuacao.FlatAppearance.BorderSize = 0;
-            this.btnPontuacao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPontuacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPontuacao.ForeColor = System.Drawing.Color.White;
-            this.btnPontuacao.Location = new System.Drawing.Point(0, 323);
-            this.btnPontuacao.Margin = new System.Windows.Forms.Padding(2);
-            this.btnPontuacao.Name = "btnPontuacao";
-            this.btnPontuacao.Size = new System.Drawing.Size(165, 59);
-            this.btnPontuacao.TabIndex = 14;
-            this.btnPontuacao.Text = "Pontuação";
-            this.btnPontuacao.UseVisualStyleBackColor = true;
-            this.btnPontuacao.Visible = false;
-            this.btnPontuacao.Click += new System.EventHandler(this.btnPontuacao_Click);
             // 
             // btnADMIN
             // 
@@ -294,17 +285,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // lblPontuacaoTotal
-            // 
-            this.lblPontuacaoTotal.AutoSize = true;
-            this.lblPontuacaoTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPontuacaoTotal.ForeColor = System.Drawing.Color.White;
-            this.lblPontuacaoTotal.Location = new System.Drawing.Point(530, 10);
-            this.lblPontuacaoTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblPontuacaoTotal.Name = "lblPontuacaoTotal";
-            this.lblPontuacaoTotal.Size = new System.Drawing.Size(0, 17);
-            this.lblPontuacaoTotal.TabIndex = 11;
-            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -351,7 +331,6 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblNomeUsuario;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnPontuacao;
         private System.Windows.Forms.Label lblPontuacao;
         private System.Windows.Forms.Label lblPontuacaoTotal;
     }
