@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHidratacaoCorporal));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
@@ -51,8 +52,9 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(682, 353);
+            this.panel1.Size = new System.Drawing.Size(513, 293);
             this.panel1.TabIndex = 11;
             // 
             // panel3
@@ -62,9 +64,10 @@
             this.panel3.Controls.Add(this.pictureSkinCream);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel3.Location = new System.Drawing.Point(327, 0);
+            this.panel3.Location = new System.Drawing.Point(245, 0);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(352, 353);
+            this.panel3.Size = new System.Drawing.Size(264, 293);
             this.panel3.TabIndex = 18;
             // 
             // label9
@@ -72,9 +75,10 @@
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.SystemColors.Window;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(0, 294);
+            this.label9.Location = new System.Drawing.Point(0, 239);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(208, 20);
+            this.label9.Size = new System.Drawing.Size(175, 17);
             this.label9.TabIndex = 9;
             this.label9.Text = "visualizar a sua descrição.";
             // 
@@ -82,9 +86,10 @@
             // 
             this.pictureSkinCream.Cursor = System.Windows.Forms.Cursors.Help;
             this.pictureSkinCream.Image = global::Dermafine.Properties.Resources.Skin_Cream_Ureia_3_;
-            this.pictureSkinCream.Location = new System.Drawing.Point(64, 42);
+            this.pictureSkinCream.Location = new System.Drawing.Point(48, 34);
+            this.pictureSkinCream.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureSkinCream.Name = "pictureSkinCream";
-            this.pictureSkinCream.Size = new System.Drawing.Size(224, 238);
+            this.pictureSkinCream.Size = new System.Drawing.Size(168, 193);
             this.pictureSkinCream.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureSkinCream.TabIndex = 2;
             this.pictureSkinCream.TabStop = false;
@@ -94,9 +99,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(69, 14);
+            this.label4.Location = new System.Drawing.Point(52, 11);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(219, 25);
+            this.label4.Size = new System.Drawing.Size(179, 20);
             this.label4.TabIndex = 5;
             this.label4.Text = "Skin Cream Ureia 3%";
             // 
@@ -108,8 +114,9 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(327, 353);
+            this.panel2.Size = new System.Drawing.Size(245, 293);
             this.panel2.TabIndex = 17;
             // 
             // label5
@@ -117,9 +124,10 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(212)))), ((int)(((byte)(247)))));
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(29, 294);
+            this.label5.Location = new System.Drawing.Point(22, 239);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(262, 20);
+            this.label5.Size = new System.Drawing.Size(224, 17);
             this.label5.TabIndex = 8;
             this.label5.Text = "clique na imagem do produto para";
             // 
@@ -127,9 +135,10 @@
             // 
             this.pictureLinhaSaphis.Cursor = System.Windows.Forms.Cursors.Help;
             this.pictureLinhaSaphis.Image = global::Dermafine.Properties.Resources.Extrem_Derme_Corpo_240ml;
-            this.pictureLinhaSaphis.Location = new System.Drawing.Point(33, 42);
+            this.pictureLinhaSaphis.Location = new System.Drawing.Point(25, 34);
+            this.pictureLinhaSaphis.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureLinhaSaphis.Name = "pictureLinhaSaphis";
-            this.pictureLinhaSaphis.Size = new System.Drawing.Size(224, 238);
+            this.pictureLinhaSaphis.Size = new System.Drawing.Size(168, 193);
             this.pictureLinhaSaphis.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureLinhaSaphis.TabIndex = 0;
             this.pictureLinhaSaphis.TabStop = false;
@@ -140,21 +149,24 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(212)))), ((int)(((byte)(247)))));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 14);
+            this.label1.Location = new System.Drawing.Point(10, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(277, 25);
+            this.label1.Size = new System.Drawing.Size(229, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Extrem Derme Corpo 240ml";
             // 
             // frmHidratacaoCorporal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(682, 353);
+            this.ClientSize = new System.Drawing.Size(513, 293);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(700, 400);
+            this.MinimumSize = new System.Drawing.Size(529, 332);
             this.Name = "frmHidratacaoCorporal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DERMAFINE - Hidratação Corporal";

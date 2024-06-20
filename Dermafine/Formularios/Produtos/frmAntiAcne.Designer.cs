@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAntiAcne));
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -37,8 +38,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureAcneSecSabonete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureAcneSecMascara)).BeginInit();
@@ -87,7 +88,7 @@
             this.pictureAcneSecSabonete.Cursor = System.Windows.Forms.Cursors.Help;
             this.pictureAcneSecSabonete.Image = global::Dermafine.Properties.Resources.AcneSec_Sabonete_Esfoliante_Cremoso;
             this.pictureAcneSecSabonete.Location = new System.Drawing.Point(80, 41);
-            this.pictureAcneSecSabonete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureAcneSecSabonete.Margin = new System.Windows.Forms.Padding(2);
             this.pictureAcneSecSabonete.Name = "pictureAcneSecSabonete";
             this.pictureAcneSecSabonete.Size = new System.Drawing.Size(168, 193);
             this.pictureAcneSecSabonete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -100,7 +101,7 @@
             this.pictureAcneSecMascara.Cursor = System.Windows.Forms.Cursors.Help;
             this.pictureAcneSecMascara.Image = global::Dermafine.Properties.Resources.Acne_Sec_Máscara_Secativa_Facial;
             this.pictureAcneSecMascara.Location = new System.Drawing.Point(83, 41);
-            this.pictureAcneSecMascara.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureAcneSecMascara.Margin = new System.Windows.Forms.Padding(2);
             this.pictureAcneSecMascara.Name = "pictureAcneSecMascara";
             this.pictureAcneSecMascara.Size = new System.Drawing.Size(168, 193);
             this.pictureAcneSecMascara.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -113,7 +114,7 @@
             this.pictureAcneSecAdstringente.Cursor = System.Windows.Forms.Cursors.Help;
             this.pictureAcneSecAdstringente.Image = global::Dermafine.Properties.Resources.Acne_Sec_Loção_Adstringente;
             this.pictureAcneSecAdstringente.Location = new System.Drawing.Point(43, 41);
-            this.pictureAcneSecAdstringente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureAcneSecAdstringente.Margin = new System.Windows.Forms.Padding(2);
             this.pictureAcneSecAdstringente.Name = "pictureAcneSecAdstringente";
             this.pictureAcneSecAdstringente.Size = new System.Drawing.Size(168, 193);
             this.pictureAcneSecAdstringente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -129,7 +130,7 @@
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(963, 291);
             this.panel1.TabIndex = 8;
@@ -140,7 +141,7 @@
             this.panel5.Controls.Add(this.label2);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel5.Location = new System.Drawing.Point(597, 0);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(336, 291);
             this.panel5.TabIndex = 11;
@@ -153,22 +154,10 @@
             this.panel4.Controls.Add(this.label3);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel4.Location = new System.Drawing.Point(272, 0);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(325, 291);
             this.panel4.TabIndex = 10;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.pictureAcneSecAdstringente);
-            this.panel3.Controls.Add(this.label5);
-            this.panel3.Controls.Add(this.label4);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(272, 291);
-            this.panel3.TabIndex = 10;
             // 
             // label9
             // 
@@ -181,6 +170,18 @@
             this.label9.Size = new System.Drawing.Size(175, 17);
             this.label9.TabIndex = 10;
             this.label9.Text = "visualizar a sua descrição.";
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.pictureAcneSecAdstringente);
+            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(272, 291);
+            this.panel3.TabIndex = 10;
             // 
             // label5
             // 
@@ -201,7 +202,8 @@
             this.ClientSize = new System.Drawing.Size(963, 291);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(979, 330);
             this.Name = "frmAntiAcne";

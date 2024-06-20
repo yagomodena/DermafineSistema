@@ -13,12 +13,15 @@ namespace Dermafine.Formularios.Consulta
 {
     public partial class frmConsulta : Form
     {
+
         IFirebaseConfig config = new FirebaseConfig()
         {
             AuthSecret = "L4SqYZL5dM3XHtp7cDE2Y2WHaB3ISqZN3oVDuiMB",
             BasePath = "https://produtosdermafine-default-rtdb.firebaseio.com/"
         };
         IFirebaseClient client;
+
+        private bool atendimentosCarregados = false;
 
         public frmConsulta()
         {
@@ -48,6 +51,9 @@ namespace Dermafine.Formularios.Consulta
                 // Definir o item "Todos" como selecionado por padrão
                 cmbProduto.SelectedIndex = 0;
 
+                // Inicializar atendimentosCarregados como false
+                atendimentosCarregados = false;
+
                 // Carregar categorias, produtos e atendimentos
                 await CarregarProdutos();
                 await CarregarAtendimentos();
@@ -64,7 +70,7 @@ namespace Dermafine.Formularios.Consulta
             dataGridViewAtendimentos.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 11);
 
             // Definir o tamanho da fonte para os títulos das colunas
-            dataGridViewAtendimentos.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12, FontStyle.Bold);            
+            dataGridViewAtendimentos.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12, FontStyle.Bold);
         }
 
         private async Task CarregarProdutos()
@@ -175,10 +181,6 @@ namespace Dermafine.Formularios.Consulta
         private async void btnPesquisar_Click(object sender, EventArgs e)
         {
             await CarregarAtendimentos();
-        }        
-
-        private async void cmbProduto_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            await CarregarAtendimentos();
-        }        
-    }}
+        }
+    }
+}

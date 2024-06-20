@@ -70,7 +70,6 @@
             this.cmbProduto.Name = "cmbProduto";
             this.cmbProduto.Size = new System.Drawing.Size(301, 26);
             this.cmbProduto.TabIndex = 11;
-            this.cmbProduto.SelectedIndexChanged += new System.EventHandler(this.cmbProduto_SelectedIndexChanged);
             // 
             // btnPesquisar
             // 
