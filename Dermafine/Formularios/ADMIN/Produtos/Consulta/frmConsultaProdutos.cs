@@ -31,7 +31,6 @@ namespace Dermafine.Formularios.ADMIN.Produtos.Consulta
         {
             try
             {
-                // Inicializar o cliente Firebase
                 client = new FireSharp.FirebaseClient(config);
                 if (client == null)
                 {
@@ -235,4 +234,3 @@ namespace Dermafine.Formularios.ADMIN.Produtos.Consulta
         }
     }
 }
-

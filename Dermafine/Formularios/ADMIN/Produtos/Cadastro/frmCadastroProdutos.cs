@@ -42,7 +42,6 @@ namespace Dermafine.Formularios.ADMIN.Produtos.Cadastro
 
             try
             {
-                // Inicializar o cliente Firebase
                 client = new FireSharp.FirebaseClient(config);
                 if (client != null)
                 {

@@ -1,5 +1,4 @@
-﻿using Dermafine.Formularios.ADMIN.Armazenamento;
-using Dermafine.Formularios.ADMIN.Produtos.Consulta;
+﻿using Dermafine.Formularios.ADMIN.Produtos.Consulta;
 using Dermafine.Formularios.ADMIN.Usuarios;
 using FireSharp.Config;
 using FireSharp.Interfaces;

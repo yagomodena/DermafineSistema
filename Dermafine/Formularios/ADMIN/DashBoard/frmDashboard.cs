@@ -69,7 +69,7 @@ namespace Dermafine.Formularios.ADMIN.DashBoard
                 HeaderText = "Data",
                 DataPropertyName = "Data",
                 AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells,
-                DefaultCellStyle = new DataGridViewCellStyle { Format = "dd/MM/yyyy" } // Formato de data desejado (sem hora)
+                DefaultCellStyle = new DataGridViewCellStyle { Format = "dd/MM/yyyy" } // Formato de data (sem hora)
             };
 
             var colNomeCompleto = new DataGridViewTextBoxColumn

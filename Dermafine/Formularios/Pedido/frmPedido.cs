@@ -204,36 +204,6 @@ namespace Dermafine.Formularios.Pedido
 
         private void dataGridViewCarrinho_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            //// Verificar se a célula editada está na coluna de quantidade e se a linha não está vazia
-            //if (e.ColumnIndex == dataGridViewCarrinho.Columns["Quantidade"].Index &&
-            //    dataGridViewCarrinho.Rows[e.RowIndex].Cells["NomeProduto"].Value != null)
-            //{
-            //    // Obter o nome do produto da linha editada
-            //    string nomeProduto = dataGridViewCarrinho.Rows[e.RowIndex].Cells["NomeProduto"].Value.ToString();
-
-            //    // Obter o valor editado da célula de quantidade
-            //    int novaQuantidade;
-            //    if (int.TryParse(dataGridViewCarrinho.Rows[e.RowIndex].Cells["Quantidade"].Value.ToString(), out novaQuantidade))
-            //    {
-            //        // Se a nova quantidade for zero, definir para 1
-            //        if (novaQuantidade == 0)
-            //        {
-            //            dataGridViewCarrinho.Rows[e.RowIndex].Cells["Quantidade"].Value = 1;
-            //            MessageBox.Show("A quantidade não pode ser zero. O valor foi ajustado para 1.");
-            //        }
-
-            //        // Atualizar a quantidade no carrinho
-            //        var itemAtualizar = carrinho.FirstOrDefault(item => item.Produto.NomeProduto == nomeProduto);
-            //        if (itemAtualizar != null)
-            //        {
-            //            itemAtualizar.Quantidade = novaQuantidade;
-            //        }
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Por favor, insira um valor numérico válido para a quantidade.");
-            //    }
-            //}
             // Verificar se a célula editada está na coluna de quantidade e se a linha não está vazia
             if (e.ColumnIndex == dataGridViewCarrinho.Columns["Quantidade"].Index &&
                 dataGridViewCarrinho.Rows[e.RowIndex].Cells["NomeProduto"].Value != null)
