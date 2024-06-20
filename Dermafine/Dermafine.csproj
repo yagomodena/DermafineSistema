@@ -147,6 +147,12 @@
     <Compile Include="Formularios\ADMIN\Produtos\Cadastro\frmCadastroProdutos.Designer.cs">
       <DependentUpon>frmCadastroProdutos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\ADMIN\Produtos\Cadastro\frmEditarProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\ADMIN\Produtos\Cadastro\frmEditarProduto.Designer.cs">
+      <DependentUpon>frmEditarProduto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\ADMIN\Produtos\Consulta\frmConsultaProdutos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,12 +225,6 @@
     <Compile Include="Formularios\Produtos\frmHidratacaoCorporal.Designer.cs">
       <DependentUpon>frmHidratacaoCorporal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Produtos\frmNutraceuticos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Produtos\frmNutraceuticos.Designer.cs">
-      <DependentUpon>frmNutraceuticos.cs</DependentUpon>
-    </Compile>
     <Compile Include="Formularios\Produtos\frmProdutos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -256,6 +256,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ADMIN\Produtos\Cadastro\frmCadastroProdutos.resx">
       <DependentUpon>frmCadastroProdutos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ADMIN\Produtos\Cadastro\frmEditarProduto.resx">
+      <DependentUpon>frmEditarProduto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ADMIN\Produtos\Consulta\frmConsultaProdutos.resx">
       <DependentUpon>frmConsultaProdutos.cs</DependentUpon>
@@ -292,9 +295,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Produtos\frmHidratacaoCorporal.resx">
       <DependentUpon>frmHidratacaoCorporal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Produtos\frmNutraceuticos.resx">
-      <DependentUpon>frmNutraceuticos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Produtos\frmProdutos.resx">
       <DependentUpon>frmProdutos.cs</DependentUpon>

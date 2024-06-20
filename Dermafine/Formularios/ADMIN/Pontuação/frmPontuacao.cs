@@ -107,7 +107,6 @@ namespace Dermafine.Formularios.ADMIN.Pontuação
                             var atendimentoViewModel = new AtendimentoViewModel
                             {
                                 NomeCompleto = atendimento.NomeCompleto,
-                                Telefone = usuario.Telefone,
                                 Cidade = usuario.Cidade,
                                 Categoria = item.Categoria,
                                 NomeProduto = item.NomeProduto,
@@ -149,13 +148,6 @@ namespace Dermafine.Formularios.ADMIN.Pontuação
                 AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
             };
 
-            var colTelefone = new DataGridViewTextBoxColumn
-            {
-                HeaderText = "Telefone",
-                DataPropertyName = "Telefone",
-                AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-            };
-
             var colCidade = new DataGridViewTextBoxColumn
             {
                 HeaderText = "Cidade",
@@ -178,7 +170,6 @@ namespace Dermafine.Formularios.ADMIN.Pontuação
             };
 
             dataGridViewPontuacao.Columns.Add(colNomeCompleto);
-            dataGridViewPontuacao.Columns.Add(colTelefone);
             dataGridViewPontuacao.Columns.Add(colCidade);
             dataGridViewPontuacao.Columns.Add(colPrescricao);
             dataGridViewPontuacao.Columns.Add(colPontuacao);
@@ -187,13 +178,12 @@ namespace Dermafine.Formularios.ADMIN.Pontuação
             {
                 var totalAtendimentos = usuario.Count();
                 var totalPontos = usuario.Sum(a => a.Pontos);
-                dataGridViewPontuacao.Rows.Add(usuario.Key, usuario.First().Telefone, usuario.First().Cidade, totalAtendimentos, totalPontos);
+                dataGridViewPontuacao.Rows.Add(usuario.Key, usuario.First().Cidade, totalAtendimentos, totalPontos);
             }
         }
         public class AtendimentoViewModel
         {
             public string NomeCompleto { get; set; }
-            public string Telefone { get; set; }
             public string Cidade { get; set; }
             public string Categoria { get; set; }
             public string NomeProduto { get; set; }

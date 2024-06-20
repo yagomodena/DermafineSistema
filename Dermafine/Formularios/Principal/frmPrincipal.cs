@@ -69,6 +69,7 @@ namespace Dermafine.Formularios.Principal
             // Exibir o nome do usuário logado
             lblUsuarioLogado.Text = "Usuário: " + UserSession.Usuario;
             lblNomeUsuario.Text = "Nome: " + UserSession.NomeCompleto;
+            lblPontuacaoTotal.Text = "Pontuação total: " + UserSession.PontuacaoTotal;
 
             if (UserSession.Usuario == "dermafine" && UserSession.NomeCompleto == "Dermafine ADMIN")
             {

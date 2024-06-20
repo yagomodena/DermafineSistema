@@ -30,8 +30,6 @@ namespace Dermafine.Formularios.Cadastro
                 {
                     Usuario = txtUsuario.Text,
                     NomeCompleto = txtNomeCompleto.Text,
-                    Telefone = txtTelefone.Text,
-                    CPF = txtCPF.Text,
                     Cidade = txtCidade.Text,
                     Senha = txtSenha.Text,
                 };
@@ -80,16 +78,8 @@ namespace Dermafine.Formularios.Cadastro
             // Se o usuário for encontrado, obtenha as informações do usuário
             register user = userResponse.ResultAs<register>();
 
-            // Verifique se o CPF do usuário corresponde ao CPF fornecido
-            if (user.CPF != txtCPF.Text)
-            {
-                MessageBox.Show("CPF incorreto. Por favor, verifique seu CPF e tente novamente.");
-                return;
-            }
-
             // Preencha os campos com as informações do usuário
             txtNomeCompleto.Text = user.NomeCompleto;
-            txtTelefone.Text = user.Telefone;
             txtCidade.Text = user.Cidade;
             txtSenha.Text = user.Senha;
         }

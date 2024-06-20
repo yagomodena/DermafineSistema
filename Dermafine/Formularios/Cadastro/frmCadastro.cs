@@ -56,24 +56,15 @@ namespace Dermafine.Formularios.Cadastro
             // Verificar se o CPF já está em uso
             FirebaseResponse cpfCheckResponse = await client.GetAsync("usuarios");
             Dictionary<string, register> users = cpfCheckResponse.ResultAs<Dictionary<string, register>>();
-            foreach (var user in users)
-            {
-                if (user.Value.CPF == txtCPF.Text)
-                {
-                    MessageBox.Show("CPF já está em uso. Cada CPF deve ser único.");
-                    return;
-                }
-            }
 
             // Se o nome de usuário estiver disponível, proceda com o cadastro
             var register = new register
             {
                 NomeCompleto = txtNomeCompleto.Text,
-                Telefone = txtTelefone.Text,
                 Cidade = txtCidade.Text,
-                CPF = txtCPF.Text,
                 Usuario = txtUsuario.Text,
                 Senha = txtSenha.Text,
+                PontuacaoTotal = 0
             };
 
             FirebaseResponse response = await client.SetAsync("usuarios/" + txtUsuario.Text, register);

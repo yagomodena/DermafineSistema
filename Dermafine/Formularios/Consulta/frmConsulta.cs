@@ -36,7 +36,14 @@ namespace Dermafine.Formularios.Consulta
                     return;
                 }
 
-                await CarregarCategorias();
+                // Limpar a lista de itens da combobox
+                cmbProduto.Items.Clear();
+
+                // Adicionar o item "Todos" à combobox
+                cmbProduto.Items.Add("Todos");
+
+                // Carregar categorias, produtos e atendimentos
+                await CarregarProdutos();
                 await CarregarAtendimentos();
             }
             catch (Exception ex)
@@ -52,36 +59,34 @@ namespace Dermafine.Formularios.Consulta
 
             // Definir o tamanho da fonte para os títulos das colunas
             dataGridViewAtendimentos.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12, FontStyle.Bold);
+
+            // Definir o item "Todos" como selecionado por padrão
+            cmbProduto.SelectedIndex = 0;
         }
 
-        private async Task CarregarCategorias()
+        private async Task CarregarProdutos()
         {
             try
             {
                 FirebaseResponse response = await client.GetAsync("produtos");
-                if (response.Body != "null")
+                if (response.Body != "null" && response.Body != null)
                 {
-                    var categorias = response.ResultAs<Dictionary<string, Dictionary<string, Produto>>>();
-                    if (categorias != null)
+                    var produtosDict = response.ResultAs<Dictionary<string, Dictionary<string, Produto>>>();
+                    var produtosList = new List<string>();
+                    foreach (var categoria in produtosDict.Values)
                     {
-                        foreach (var categoria in categorias)
+                        foreach (var produto in categoria.Values)
                         {
-                            cmbCategoria.Items.Add(categoria.Key);
+                            produtosList.Add(produto.NomeProduto);
                         }
                     }
-                    else
-                    {
-                        MessageBox.Show("Nenhuma categoria encontrada no Firebase.");
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Nenhum produto foi encontrado no Firebase.");
+                    produtosList.Sort(); // Ordena os produtos em ordem alfabética
+                    cmbProduto.Items.AddRange(produtosList.ToArray());
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao carregar categorias: " + ex.Message);
+                MessageBox.Show("Erro ao carregar produtos: " + ex.Message);
             }
         }
 
@@ -125,6 +130,7 @@ namespace Dermafine.Formularios.Consulta
             dataGridViewAtendimentos.Columns.Add("Categoria", "Categoria");
             dataGridViewAtendimentos.Columns.Add("NomeProduto", "Nome do Produto");
             dataGridViewAtendimentos.Columns.Add("Quantidade", "Quantidade");
+            dataGridViewAtendimentos.Columns.Add("Pontos", "Pontuação");
 
             // Adicionar linhas
             foreach (var atendimento in atendimentos)
@@ -140,7 +146,8 @@ namespace Dermafine.Formularios.Consulta
                         dataValida ? dataAtendimento.ToString("g") : "Data Inválida",
                         item.Categoria,
                         item.NomeProduto,
-                        item.Quantidade
+                        item.Quantidade,
+                        item.Pontos
                     );
                 }
             }
@@ -148,26 +155,12 @@ namespace Dermafine.Formularios.Consulta
 
         private async void btnPesquisar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                string categoriaFiltro = cmbCategoria.Text.Trim();
-                var usuarioLogado = UserSession.Usuario;
+            await CarregarAtendimentos();
+        }        
 
-                var response = await client.GetAsync("atendimentos");
-                var atendimentos = response.ResultAs<Dictionary<string, Atendimento>>();
-
-                var atendimentosFiltrados = atendimentos
-                    .Where(a => a.Value.NomeUsuario == usuarioLogado)
-                    .Select(a => a.Value)
-                    .Where(a => string.IsNullOrEmpty(categoriaFiltro) || a.Itens.Any(i => i.Categoria.Contains(categoriaFiltro)))
-                    .ToList();
-
-                ExibirAtendimentos(atendimentosFiltrados);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro ao filtrar atendimentos: " + ex.Message);
-            }
-        }
+        private async void cmbProduto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            await CarregarAtendimentos();
+        }        
     }
 }

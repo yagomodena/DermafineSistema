@@ -50,11 +50,5 @@ namespace Dermafine.Formularios.Produtos
             frmCilios cilios = new frmCilios();
             cilios.Show();
         }
-
-        private void btnNutraceuticos_Click(object sender, EventArgs e)
-        {
-            frmNutraceuticos nutraceuticos = new frmNutraceuticos();
-            nutraceuticos.Show();
-        }
     }
 }

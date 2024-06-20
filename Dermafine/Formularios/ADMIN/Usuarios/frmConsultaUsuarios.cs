@@ -43,7 +43,7 @@ namespace Dermafine.Formularios.ADMIN.Usuarios
 
                     foreach (var usuario in usuariosDict.Values)
                     {
-                        dgvUsuarios.Rows.Add(usuario.NomeCompleto, usuario.Cidade, usuario.Telefone);
+                        dgvUsuarios.Rows.Add(usuario.NomeCompleto, usuario.Cidade);
                     }
                 }
             }
@@ -69,7 +69,6 @@ namespace Dermafine.Formularios.ADMIN.Usuarios
             // Adicionando as colunas necessárias
             dgvUsuarios.Columns.Add("NomeCompleto", "Nome Completo");
             dgvUsuarios.Columns.Add("Cidade", "Cidade");
-            dgvUsuarios.Columns.Add("Telefone", "Telefone");
         }
     }
 }

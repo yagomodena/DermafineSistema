@@ -69,7 +69,6 @@ namespace Dermafine
 
                         UserSession.Usuario = usuario;
                         UserSession.NomeCompleto = get.Value.NomeCompleto;
-                        UserSession.Telefone = get.Value.Telefone;
                         UserSession.Cidade = get.Value.Cidade;
 
                         this.Hide();

@@ -16,5 +16,6 @@ namespace Dermafine.Classes
         public string Categoria { get; set; }
         public string NomeProduto { get; set; }
         public int Quantidade { get; set; }
+        public int Pontos { get; set; }
     }
 }

@@ -37,6 +37,7 @@ namespace Dermafine.Formularios.ADMIN.Produtos.Cadastro
             {
                 NomeProduto = txtNomeProduto.Text,
                 Categoria = cmbCategoriaProduto.Text,
+                Pontuacao = (int)numPontuacao.Value // Captura a pontuação do campo numPontuacao
             };
 
             try

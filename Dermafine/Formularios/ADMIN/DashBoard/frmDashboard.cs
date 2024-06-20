@@ -78,13 +78,6 @@ namespace Dermafine.Formularios.ADMIN.DashBoard
                 AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
             };
 
-            var colTelefone = new DataGridViewTextBoxColumn
-            {
-                HeaderText = "Telefone",
-                DataPropertyName = "Telefone",
-                AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-            };
-
             var colCidade = new DataGridViewTextBoxColumn
             {
                 HeaderText = "Cidade",
@@ -115,7 +108,6 @@ namespace Dermafine.Formularios.ADMIN.DashBoard
 
             dgvAtendimentos.Columns.Add(colData);
             dgvAtendimentos.Columns.Add(colNomeCompleto);
-            dgvAtendimentos.Columns.Add(colTelefone);
             dgvAtendimentos.Columns.Add(colCidade);
             dgvAtendimentos.Columns.Add(colCategoria);
             dgvAtendimentos.Columns.Add(colNomeProduto);
@@ -235,7 +227,6 @@ namespace Dermafine.Formularios.ADMIN.DashBoard
                             var atendimentoViewModel = new AtendimentoViewModel
                             {
                                 NomeCompleto = atendimento.NomeCompleto,
-                                Telefone = usuario.Telefone,
                                 Cidade = usuario.Cidade,
                                 Categoria = item.Categoria,
                                 NomeProduto = item.NomeProduto,
@@ -259,7 +250,6 @@ namespace Dermafine.Formularios.ADMIN.DashBoard
         public class AtendimentoViewModel
         {
             public string NomeCompleto { get; set; }
-            public string Telefone { get; set; }
             public string Cidade { get; set; }
             public string Categoria { get; set; }
             public string NomeProduto { get; set; }
@@ -271,17 +261,17 @@ namespace Dermafine.Formularios.ADMIN.DashBoard
         {
             var atendimentos = await GetAtendimentos();
 
-            if (cmbUsuario.SelectedItem.ToString() != "Todos")
+            if (cmbUsuario.SelectedItem != null && cmbUsuario.SelectedItem.ToString() != "Todos")
             {
                 atendimentos = atendimentos.Where(a => a.NomeCompleto == cmbUsuario.SelectedItem.ToString()).ToList();
             }
 
-            if (cmbCategoria.SelectedItem.ToString() != "Todos")
+            if (cmbCategoria.SelectedItem != null && cmbCategoria.SelectedItem.ToString() != "Todos")
             {
                 atendimentos = atendimentos.Where(a => a.Categoria == cmbCategoria.SelectedItem.ToString()).ToList();
             }
 
-            if (cmbProduto.SelectedItem.ToString() != "Todos")
+            if (cmbProduto.SelectedItem != null && cmbProduto.SelectedItem.ToString() != "Todos")
             {
                 atendimentos = atendimentos.Where(a => a.NomeProduto == cmbProduto.SelectedItem.ToString()).ToList();
             }
