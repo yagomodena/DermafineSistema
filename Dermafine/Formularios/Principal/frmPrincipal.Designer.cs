@@ -107,9 +107,10 @@
             // lblPontuacaoTotal
             // 
             this.lblPontuacaoTotal.AutoSize = true;
+            this.lblPontuacaoTotal.Dock = System.Windows.Forms.DockStyle.Right;
             this.lblPontuacaoTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPontuacaoTotal.ForeColor = System.Drawing.Color.White;
-            this.lblPontuacaoTotal.Location = new System.Drawing.Point(530, 10);
+            this.lblPontuacaoTotal.Location = new System.Drawing.Point(1061, 0);
             this.lblPontuacaoTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPontuacaoTotal.Name = "lblPontuacaoTotal";
             this.lblPontuacaoTotal.Size = new System.Drawing.Size(0, 17);
@@ -118,9 +119,10 @@
             // lblPontuacao
             // 
             this.lblPontuacao.AutoSize = true;
+            this.lblPontuacao.Dock = System.Windows.Forms.DockStyle.Right;
             this.lblPontuacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPontuacao.ForeColor = System.Drawing.Color.White;
-            this.lblPontuacao.Location = new System.Drawing.Point(602, 10);
+            this.lblPontuacao.Location = new System.Drawing.Point(1061, 0);
             this.lblPontuacao.Name = "lblPontuacao";
             this.lblPontuacao.Size = new System.Drawing.Size(0, 17);
             this.lblPontuacao.TabIndex = 10;
@@ -128,9 +130,10 @@
             // lblNomeUsuario
             // 
             this.lblNomeUsuario.AutoSize = true;
+            this.lblNomeUsuario.Dock = System.Windows.Forms.DockStyle.Left;
             this.lblNomeUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNomeUsuario.ForeColor = System.Drawing.Color.White;
-            this.lblNomeUsuario.Location = new System.Drawing.Point(172, 10);
+            this.lblNomeUsuario.Location = new System.Drawing.Point(0, 0);
             this.lblNomeUsuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNomeUsuario.Name = "lblNomeUsuario";
             this.lblNomeUsuario.Size = new System.Drawing.Size(0, 17);
@@ -139,9 +142,10 @@
             // lblUsuarioLogado
             // 
             this.lblUsuarioLogado.AutoSize = true;
+            this.lblUsuarioLogado.Dock = System.Windows.Forms.DockStyle.Left;
             this.lblUsuarioLogado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsuarioLogado.ForeColor = System.Drawing.Color.White;
-            this.lblUsuarioLogado.Location = new System.Drawing.Point(9, 10);
+            this.lblUsuarioLogado.Location = new System.Drawing.Point(0, 0);
             this.lblUsuarioLogado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUsuarioLogado.Name = "lblUsuarioLogado";
             this.lblUsuarioLogado.Size = new System.Drawing.Size(0, 17);

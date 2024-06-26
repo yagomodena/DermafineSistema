@@ -54,7 +54,6 @@ namespace Dermafine.Formularios.Pedido
                                 }
                             }
 
-                            // Ordenar os produtos em ordem alfabética e adicionar à ComboBox
                             produtos = produtos.OrderBy(p => p.NomeProduto).ToList();
                             foreach (var produto in produtos)
                             {
@@ -79,7 +78,6 @@ namespace Dermafine.Formularios.Pedido
                     MessageBox.Show("Erro ao conectar ao Firebase. Verifique sua conexão com a internet.");
                 }
 
-                // Definir as colunas do DataGridView uma única vez
                 DefinirColunasDataGridView();
             }
             catch (Exception ex)
@@ -87,13 +85,11 @@ namespace Dermafine.Formularios.Pedido
                 MessageBox.Show("Erro ao carregar produtos: " + ex.Message);
             }
 
-            // Calcular a pontuação total do atendimento
             int pontuacaoTotal = carrinho.Sum(item => item.Produto.Pontuacao * item.Quantidade);
         }
 
         private void cmbProduto_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Verificar se algum item foi selecionado na ComboBox de produtos
             if (cmbProduto.SelectedItem != null)
             {
                 txtNomeProduto.Text = cmbProduto.SelectedItem.ToString();
@@ -107,7 +103,6 @@ namespace Dermafine.Formularios.Pedido
                 string nomeProdutoSelecionado = cmbProduto.SelectedItem.ToString().Trim();
                 int quantidade = (int)numQuantidade.Value;
 
-                // Verificar se a quantidade é maior que zero
                 if (quantidade <= 0)
                 {
                     MessageBox.Show("A quantidade deve ser maior que zero.");
@@ -133,7 +128,6 @@ namespace Dermafine.Formularios.Pedido
                     AtualizarExibicaoCarrinho();
                     MessageBox.Show("Produto adicionado ao carrinho!");
 
-                    // Limpar apenas os campos de quantidade e nome do produto
                     LimparCamposSelecao();
                 }
                 else

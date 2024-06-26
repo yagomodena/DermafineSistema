@@ -43,9 +43,9 @@
             this.label2.Location = new System.Drawing.Point(16, 15);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(524, 20);
+            this.label2.Size = new System.Drawing.Size(195, 20);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Tela onde exibe todos os usuários cadastrados e o realizar o pagamento.";
+            this.label2.Text = "REALIZAR PAGAMENTO";
             // 
             // dgvUsuarios
             // 
@@ -55,7 +55,7 @@
             this.dgvUsuarios.BackgroundColor = System.Drawing.Color.White;
             this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUsuarios.Location = new System.Drawing.Point(0, 51);
-            this.dgvUsuarios.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvUsuarios.Margin = new System.Windows.Forms.Padding(2);
             this.dgvUsuarios.Name = "dgvUsuarios";
             this.dgvUsuarios.RowHeadersWidth = 51;
             this.dgvUsuarios.RowTemplate.Height = 24;
@@ -68,7 +68,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(600, 46);
             this.panel1.TabIndex = 6;
@@ -82,11 +82,11 @@
             this.Controls.Add(this.dgvUsuarios);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "frmConsultaUsuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DERMAFINE - USUÁRIOS";
+            this.Text = "DERMAFINE - REALIZAR PAGAMENTOS";
             this.Load += new System.EventHandler(this.frmConsultaUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
             this.panel1.ResumeLayout(false);

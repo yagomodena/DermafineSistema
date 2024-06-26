@@ -45,7 +45,6 @@ namespace Dermafine.Formularios.Cadastro
                 return;
             }
 
-            // Verificar se o nome de usuário já está em uso
             FirebaseResponse userCheckResponse = await client.GetAsync("usuarios/" + txtUsuario.Text);
             if (userCheckResponse.Body != "null")
             {
@@ -53,7 +52,7 @@ namespace Dermafine.Formularios.Cadastro
                 return;
             }
 
-            // Verificar se o CPF já está em uso
+
             FirebaseResponse cpfCheckResponse = await client.GetAsync("usuarios");
             Dictionary<string, register> users = cpfCheckResponse.ResultAs<Dictionary<string, register>>();
 

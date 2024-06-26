@@ -46,15 +46,20 @@ namespace Dermafine.Formularios.Principal
             {
                 activeForm.Close();
             }
+
             ActivateButton(btnSender);
+
             activeForm = childForm;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
+
             this.panelExibir.Controls.Add(childForm);
             this.panelExibir.Tag = childForm;
+
             childForm.BringToFront();
             childForm.Show();
+
             lblTitle.Text = childForm.Text;
         }
 
@@ -65,7 +70,6 @@ namespace Dermafine.Formularios.Principal
 
         public void frmPrincipal_Load(object sender, EventArgs e)
         {
-            // Exibir o nome do usuário logado
             lblUsuarioLogado.Text = "Usuário: " + UserSession.Usuario;
             lblNomeUsuario.Text = "Nome: " + UserSession.NomeCompleto;
             lblPontuacaoTotal.Text = "Pontuação total: " + UserSession.pontuacaoTotal;

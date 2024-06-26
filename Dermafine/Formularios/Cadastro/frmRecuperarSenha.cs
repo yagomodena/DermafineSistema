@@ -37,9 +37,9 @@ namespace Dermafine.Formularios.Cadastro
                 FirebaseResponse response = await client.UpdateAsync("usuarios/" + txtUsuario.Text, register);
                 if (response.StatusCode == System.Net.HttpStatusCode.OK)
                 {
-                    this.Hide(); // Esconder o formulário de login antes de abrir o principal
+                    this.Hide();
                     frmLogin login = new frmLogin();
-                    login.FormClosed += (s, args) => Application.Exit(); // Fechar a aplicação quando o frmPrincipal for fechado
+                    login.FormClosed += (s, args) => Application.Exit();
                     login.Show();
                     return;
                 }
@@ -68,15 +68,26 @@ namespace Dermafine.Formularios.Cadastro
 
         private async void picPesquisar_Click(object sender, EventArgs e)
         {
-             FirebaseResponse userResponse = await client.GetAsync("usuarios/" + txtUsuario.Text);
+            FirebaseResponse userResponse = await client.GetAsync("usuarios/" + txtUsuario.Text);
             if (userResponse.Body == "null")
             {
                 MessageBox.Show("Usuário não encontrado.");
                 return;
             }
 
-            // Se o usuário for encontrado, obtenha as informações do usuário
             register user = userResponse.ResultAs<register>();
+
+            if (!string.Equals(user.NomeCompleto, txtNomeCompleto.Text, StringComparison.OrdinalIgnoreCase))
+            {
+                MessageBox.Show("Verifique se digitou o seu nome corretamente.");
+                return;
+            }
+
+            if (user.Usuario == "dermafine" && user.NomeCompleto == "Dermafine ADMIN")
+            {
+                MessageBox.Show("Para fazer alterações no seu usuário entre em contato com o Yago!");
+                return;
+            }
 
             // Preencha os campos com as informações do usuário
             txtNomeCompleto.Text = user.NomeCompleto;
