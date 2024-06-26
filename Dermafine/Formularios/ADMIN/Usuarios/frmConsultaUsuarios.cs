@@ -124,26 +124,41 @@ namespace Dermafine.Formularios.ADMIN.Usuarios
 
         private async Task RealizarPagamento(string nomeUsuario)
         {
+            progressBarPagamento.Visible = true;
+            progressBarPagamento.Value = 0; // Inicia com 0%
+
             try
             {
-                // Buscar usuário pelo nome completo
+                // Passo 1: Buscar usuário pelo nome completo
+                progressBarPagamento.Value = 20; // Atualiza para 20%
                 var response = await client.GetAsync("usuarios");
                 if (response.Body == "null")
                 {
                     MessageBox.Show("Usuário não encontrado.");
+                    progressBarPagamento.Visible = false;
                     return;
                 }
 
                 var usuariosDict = response.ResultAs<Dictionary<string, register>>();
-                var usuario = usuariosDict.Values.FirstOrDefault(u => u.NomeCompleto == nomeUsuario);
+                var usuario = usuariosDict.Values.FirstOrDefault(u => u.NomeCompleto.Equals(nomeUsuario, StringComparison.OrdinalIgnoreCase));
 
                 if (usuario == null)
                 {
                     MessageBox.Show("Usuário não encontrado.");
+                    progressBarPagamento.Visible = false;
                     return;
                 }
 
-                // Excluir atendimentos do usuário
+                // Verificar se a pontuação do usuário é zero
+                if (usuario.pontuacaoTotal == 0)
+                {
+                    MessageBox.Show("Usuário não tem pontuação suficiente para realizar o pagamento.");
+                    progressBarPagamento.Visible = false;
+                    return;
+                }
+
+                // Passo 2: Excluir atendimentos do usuário
+                progressBarPagamento.Value = 50; // Atualiza para 50%
                 var responseAtendimentos = await client.GetAsync("atendimentos");
                 if (responseAtendimentos.Body != "null")
                 {
@@ -157,7 +172,8 @@ namespace Dermafine.Formularios.ADMIN.Usuarios
                     }
                 }
 
-                // Zerar a pontuação do usuário
+                // Passo 3: Zerar a pontuação do usuário
+                progressBarPagamento.Value = 80; // Atualiza para 80%
                 usuario.pontuacaoTotal = 0;
                 await client.UpdateAsync($"usuarios/{usuario.Usuario}", usuario);
 
@@ -177,10 +193,16 @@ namespace Dermafine.Formularios.ADMIN.Usuarios
                         mainForm.AtualizarPontuacaoTotal(UserSession.pontuacaoTotal);
                     }));
                 }
+
+                progressBarPagamento.Value = 100; // Atualiza para 100%
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao realizar pagamento: " + ex.Message);
+            }
+            finally
+            {
+                progressBarPagamento.Visible = false; // Esconde a ProgressBar ao final da operação
             }
         }
     }

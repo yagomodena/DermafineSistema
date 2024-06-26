@@ -32,6 +32,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.progressBarPagamento = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -65,6 +66,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.progressBarPagamento);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -72,6 +74,14 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(600, 46);
             this.panel1.TabIndex = 6;
+            // 
+            // progressBarPagamento
+            // 
+            this.progressBarPagamento.Location = new System.Drawing.Point(306, 13);
+            this.progressBarPagamento.Name = "progressBarPagamento";
+            this.progressBarPagamento.Size = new System.Drawing.Size(282, 23);
+            this.progressBarPagamento.TabIndex = 6;
+            this.progressBarPagamento.Visible = false;
             // 
             // frmConsultaUsuarios
             // 
@@ -99,5 +109,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgvUsuarios;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ProgressBar progressBarPagamento;
     }
 }
