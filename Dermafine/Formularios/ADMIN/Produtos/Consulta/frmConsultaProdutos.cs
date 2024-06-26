@@ -1,5 +1,6 @@
 ﻿using Dermafine.Classes;
 using Dermafine.Formularios.ADMIN.Produtos.Cadastro;
+using FireSharp;
 using FireSharp.Config;
 using FireSharp.Interfaces;
 using FireSharp.Response;
@@ -22,9 +23,10 @@ namespace Dermafine.Formularios.ADMIN.Produtos.Consulta
         };
         private IFirebaseClient client;
 
-        public frmConsultaProdutos()
+        public frmConsultaProdutos(IFirebaseClient firebaseClient)
         {
             InitializeComponent();
+            client = firebaseClient;
         }
 
         private async void frmConsultaProdutos_Load(object sender, EventArgs e)
@@ -96,7 +98,8 @@ namespace Dermafine.Formularios.ADMIN.Produtos.Consulta
                 HeaderText = "Editar",
                 Text = "Editar",
                 UseColumnTextForButtonValue = true,
-                AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+                AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells,
+                Name = "colEditar" // Nome da coluna para identificação no evento CellContentClick
             };
 
             var colExcluir = new DataGridViewButtonColumn
@@ -111,7 +114,7 @@ namespace Dermafine.Formularios.ADMIN.Produtos.Consulta
             dgvProdutos.Columns.Add(colNomeProduto);
             dgvProdutos.Columns.Add(colPontuacaoProduto);
             dgvProdutos.Columns.Add(colExcluir);
-            dgvProdutos.Columns.Add(colEditar); 
+            dgvProdutos.Columns.Add(colEditar);
         }
 
         private async Task CarregarCategorias()
@@ -190,21 +193,28 @@ namespace Dermafine.Formularios.ADMIN.Produtos.Consulta
             dgvProdutos.DataSource = produtos;
         }
 
-        private  async void dgvProdutos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.ColumnIndex >= 0 && dgvProdutos.Columns[e.ColumnIndex].Name == "colEditar")
-            {
-                // Obtém o produto selecionado
-                var produtoSelecionado = dgvProdutos.Rows[e.RowIndex].DataBoundItem as Produto;
+        //private  async void dgvProdutos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    if (e.ColumnIndex >= 0 && dgvProdutos.Columns[e.ColumnIndex].Name == "colEditar")
+        //    {
+        //        // Obtém o produto selecionado
+        //        var produtoSelecionado = dgvProdutos.Rows[e.RowIndex].DataBoundItem as Produto;
 
-                // Abre o formulário de edição de produto com as informações do produto selecionado
-                var frmEditarProduto = new frmEditarProduto(produtoSelecionado);
-                frmEditarProduto.ShowDialog();
+        //        if (produtoSelecionado != null)
+        //        {
+        //            // Abre o formulário de edição de produto com as informações do produto selecionado
+        //            var frmEditarProduto = new frmEditarProduto(produtoSelecionado.produtoID, client);
+        //            frmEditarProduto.ShowDialog();
 
-                // Recarrega os produtos após edição
-                await CarregarProdutos();
-            }
-        }
+        //            // Recarrega os produtos após edição
+        //            await CarregarProdutos();
+        //        }
+        //        else
+        //        {
+        //            MessageBox.Show("Produto não encontrado.");
+        //        }
+        //    }
+        //}
 
         private async Task ExcluirProduto(string categoria, string produtoId)
         {
@@ -231,6 +241,12 @@ namespace Dermafine.Formularios.ADMIN.Produtos.Consulta
         {
             frmCadastroProdutos inicio = new frmCadastroProdutos();
             inicio.Show();
+        }
+
+        private void btnEditarProduto_Click(object sender, EventArgs e)
+        {
+            frmEditarProduto editar = new frmEditarProduto();
+            editar.Show();
         }
     }
 }

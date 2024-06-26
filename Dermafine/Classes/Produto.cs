@@ -4,6 +4,7 @@ namespace Dermafine.Classes
 {
     public class Produto
     {
+        public string produtoID { get; set; }
         public string Categoria { get; set; }
         public string NomeProduto { get; set; }
         public int Pontuacao { get; set; }

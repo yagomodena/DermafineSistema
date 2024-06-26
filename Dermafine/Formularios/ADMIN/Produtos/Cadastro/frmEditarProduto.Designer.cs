@@ -31,10 +31,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.numPontuacao = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
-            this.cmbCategoriaProduto = new System.Windows.Forms.ComboBox();
             this.btnCadastrarProduto = new System.Windows.Forms.Button();
-            this.txtNomeProduto = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.cmbNomeProduto = new System.Windows.Forms.ComboBox();
+            this.cmbCategoriaProduto = new System.Windows.Forms.ComboBox();
+            this.txtNomeProduto = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numPontuacao)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,7 +43,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(21, 69);
+            this.label3.Location = new System.Drawing.Point(31, 138);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(129, 15);
@@ -52,7 +53,7 @@
             // numPontuacao
             // 
             this.numPontuacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numPontuacao.Location = new System.Drawing.Point(24, 86);
+            this.numPontuacao.Location = new System.Drawing.Point(34, 155);
             this.numPontuacao.Margin = new System.Windows.Forms.Padding(2);
             this.numPontuacao.Name = "numPontuacao";
             this.numPontuacao.Size = new System.Drawing.Size(126, 24);
@@ -69,43 +70,18 @@
             this.label2.TabIndex = 22;
             this.label2.Text = "Categoria do Produto";
             // 
-            // cmbCategoriaProduto
-            // 
-            this.cmbCategoriaProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbCategoriaProduto.FormattingEnabled = true;
-            this.cmbCategoriaProduto.Items.AddRange(new object[] {
-            "Anti Acne",
-            "Cabelos e Unhas",
-            "Cílios e Sobrancelhas",
-            "Cuidados Faciais",
-            "Hidratação Corporal",
-            "Nutraceuticos",
-            "Proteção Solar"});
-            this.cmbCategoriaProduto.Location = new System.Drawing.Point(226, 36);
-            this.cmbCategoriaProduto.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbCategoriaProduto.Name = "cmbCategoriaProduto";
-            this.cmbCategoriaProduto.Size = new System.Drawing.Size(120, 23);
-            this.cmbCategoriaProduto.TabIndex = 21;
-            // 
             // btnCadastrarProduto
             // 
+            this.btnCadastrarProduto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCadastrarProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastrarProduto.Location = new System.Drawing.Point(24, 124);
+            this.btnCadastrarProduto.Location = new System.Drawing.Point(34, 193);
             this.btnCadastrarProduto.Margin = new System.Windows.Forms.Padding(2);
             this.btnCadastrarProduto.Name = "btnCadastrarProduto";
             this.btnCadastrarProduto.Size = new System.Drawing.Size(309, 25);
             this.btnCadastrarProduto.TabIndex = 20;
             this.btnCadastrarProduto.Text = "Salvar edição do Produto";
             this.btnCadastrarProduto.UseVisualStyleBackColor = true;
-            // 
-            // txtNomeProduto
-            // 
-            this.txtNomeProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNomeProduto.Location = new System.Drawing.Point(24, 36);
-            this.txtNomeProduto.Margin = new System.Windows.Forms.Padding(2);
-            this.txtNomeProduto.Name = "txtNomeProduto";
-            this.txtNomeProduto.Size = new System.Drawing.Size(188, 21);
-            this.txtNomeProduto.TabIndex = 19;
+            this.btnCadastrarProduto.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // label1
             // 
@@ -118,17 +94,42 @@
             this.label1.TabIndex = 18;
             this.label1.Text = "Nome do Produto";
             // 
+            // cmbNomeProduto
+            // 
+            this.cmbNomeProduto.FormattingEnabled = true;
+            this.cmbNomeProduto.Location = new System.Drawing.Point(24, 50);
+            this.cmbNomeProduto.Name = "cmbNomeProduto";
+            this.cmbNomeProduto.Size = new System.Drawing.Size(121, 21);
+            this.cmbNomeProduto.TabIndex = 25;
+            this.cmbNomeProduto.SelectedIndexChanged += new System.EventHandler(this.cmbNomeProduto_SelectedIndexChanged);
+            // 
+            // cmbCategoriaProduto
+            // 
+            this.cmbCategoriaProduto.FormattingEnabled = true;
+            this.cmbCategoriaProduto.Location = new System.Drawing.Point(226, 74);
+            this.cmbCategoriaProduto.Name = "cmbCategoriaProduto";
+            this.cmbCategoriaProduto.Size = new System.Drawing.Size(121, 21);
+            this.cmbCategoriaProduto.TabIndex = 26;
+            // 
+            // txtNomeProduto
+            // 
+            this.txtNomeProduto.Location = new System.Drawing.Point(24, 87);
+            this.txtNomeProduto.Name = "txtNomeProduto";
+            this.txtNomeProduto.Size = new System.Drawing.Size(100, 20);
+            this.txtNomeProduto.TabIndex = 27;
+            // 
             // frmEditarProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(394, 158);
+            this.ClientSize = new System.Drawing.Size(464, 281);
+            this.Controls.Add(this.txtNomeProduto);
+            this.Controls.Add(this.cmbCategoriaProduto);
+            this.Controls.Add(this.cmbNomeProduto);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.numPontuacao);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.cmbCategoriaProduto);
             this.Controls.Add(this.btnCadastrarProduto);
-            this.Controls.Add(this.txtNomeProduto);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -146,9 +147,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NumericUpDown numPontuacao;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cmbCategoriaProduto;
         private System.Windows.Forms.Button btnCadastrarProduto;
-        private System.Windows.Forms.TextBox txtNomeProduto;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cmbNomeProduto;
+        private System.Windows.Forms.ComboBox cmbCategoriaProduto;
+        private System.Windows.Forms.TextBox txtNomeProduto;
     }
 }

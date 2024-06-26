@@ -29,7 +29,7 @@ namespace Dermafine.Formularios.ADMIN
 
         private void btnProdutos_Click(object sender, EventArgs e)
         {
-            frmConsultaProdutos inicio = new frmConsultaProdutos();
+            frmConsultaProdutos inicio = new frmConsultaProdutos(client);
             inicio.Show();
         }
 

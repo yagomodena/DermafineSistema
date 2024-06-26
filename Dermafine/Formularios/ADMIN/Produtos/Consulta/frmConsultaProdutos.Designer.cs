@@ -35,6 +35,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnCadastrarProduto = new System.Windows.Forms.Button();
             this.dgvProdutos = new System.Windows.Forms.DataGridView();
+            this.btnEditarProduto = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
@@ -42,11 +43,12 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnEditarProduto);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.cmbCategoriaProdutos);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(600, 71);
             this.panel1.TabIndex = 0;
@@ -67,7 +69,7 @@
             this.cmbCategoriaProdutos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCategoriaProdutos.FormattingEnabled = true;
             this.cmbCategoriaProdutos.Location = new System.Drawing.Point(16, 30);
-            this.cmbCategoriaProdutos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbCategoriaProdutos.Margin = new System.Windows.Forms.Padding(2);
             this.cmbCategoriaProdutos.Name = "cmbCategoriaProdutos";
             this.cmbCategoriaProdutos.Size = new System.Drawing.Size(145, 26);
             this.cmbCategoriaProdutos.TabIndex = 4;
@@ -79,7 +81,7 @@
             this.panel2.Controls.Add(this.btnCadastrarProduto);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 315);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(600, 58);
             this.panel2.TabIndex = 1;
@@ -90,7 +92,7 @@
             this.btnCadastrarProduto.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnCadastrarProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastrarProduto.Location = new System.Drawing.Point(474, 0);
-            this.btnCadastrarProduto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCadastrarProduto.Margin = new System.Windows.Forms.Padding(2);
             this.btnCadastrarProduto.Name = "btnCadastrarProduto";
             this.btnCadastrarProduto.Size = new System.Drawing.Size(124, 56);
             this.btnCadastrarProduto.TabIndex = 6;
@@ -104,13 +106,23 @@
             this.dgvProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProdutos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvProdutos.Location = new System.Drawing.Point(0, 71);
-            this.dgvProdutos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvProdutos.Margin = new System.Windows.Forms.Padding(2);
             this.dgvProdutos.Name = "dgvProdutos";
+            this.dgvProdutos.ReadOnly = true;
             this.dgvProdutos.RowHeadersWidth = 51;
             this.dgvProdutos.RowTemplate.Height = 24;
             this.dgvProdutos.Size = new System.Drawing.Size(600, 244);
             this.dgvProdutos.TabIndex = 2;
-            this.dgvProdutos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProdutos_CellContentClick);
+            // 
+            // btnEditarProduto
+            // 
+            this.btnEditarProduto.Location = new System.Drawing.Point(409, 30);
+            this.btnEditarProduto.Name = "btnEditarProduto";
+            this.btnEditarProduto.Size = new System.Drawing.Size(75, 23);
+            this.btnEditarProduto.TabIndex = 6;
+            this.btnEditarProduto.Text = "editar";
+            this.btnEditarProduto.UseVisualStyleBackColor = true;
+            this.btnEditarProduto.Click += new System.EventHandler(this.btnEditarProduto_Click);
             // 
             // frmConsultaProdutos
             // 
@@ -122,7 +134,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmConsultaProdutos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ADMIN DERMAFINE - CONSULTA DE PRODUTOS";
@@ -143,5 +155,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnCadastrarProduto;
         private System.Windows.Forms.DataGridView dgvProdutos;
+        private System.Windows.Forms.Button btnEditarProduto;
     }
 }
