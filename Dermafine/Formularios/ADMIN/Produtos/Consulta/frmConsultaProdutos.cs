@@ -93,28 +93,9 @@ namespace Dermafine.Formularios.ADMIN.Produtos.Consulta
                 ReadOnly = false
             };
 
-            var colEditar = new DataGridViewButtonColumn
-            {
-                HeaderText = "Editar",
-                Text = "Editar",
-                UseColumnTextForButtonValue = true,
-                AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells,
-                Name = "colEditar" // Nome da coluna para identificação no evento CellContentClick
-            };
-
-            var colExcluir = new DataGridViewButtonColumn
-            {
-                HeaderText = "Excluir",
-                Text = "Excluir",
-                UseColumnTextForButtonValue = true,
-                AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-            };
-
             dgvProdutos.Columns.Add(colCategoria);
             dgvProdutos.Columns.Add(colNomeProduto);
             dgvProdutos.Columns.Add(colPontuacaoProduto);
-            dgvProdutos.Columns.Add(colExcluir);
-            dgvProdutos.Columns.Add(colEditar);
         }
 
         private async Task CarregarCategorias()
@@ -191,61 +172,19 @@ namespace Dermafine.Formularios.ADMIN.Produtos.Consulta
             }
 
             dgvProdutos.DataSource = produtos;
-        }
-
-        //private  async void dgvProdutos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        //{
-        //    if (e.ColumnIndex >= 0 && dgvProdutos.Columns[e.ColumnIndex].Name == "colEditar")
-        //    {
-        //        // Obtém o produto selecionado
-        //        var produtoSelecionado = dgvProdutos.Rows[e.RowIndex].DataBoundItem as Produto;
-
-        //        if (produtoSelecionado != null)
-        //        {
-        //            // Abre o formulário de edição de produto com as informações do produto selecionado
-        //            var frmEditarProduto = new frmEditarProduto(produtoSelecionado.produtoID, client);
-        //            frmEditarProduto.ShowDialog();
-
-        //            // Recarrega os produtos após edição
-        //            await CarregarProdutos();
-        //        }
-        //        else
-        //        {
-        //            MessageBox.Show("Produto não encontrado.");
-        //        }
-        //    }
-        //}
-
-        private async Task ExcluirProduto(string categoria, string produtoId)
-        {
-            try
-            {
-                FirebaseResponse response = await client.DeleteAsync($"produtos/{categoria}/{produtoId}");
-                if (response.StatusCode == System.Net.HttpStatusCode.OK)
-                {
-                    MessageBox.Show("Produto excluído com sucesso!");
-                    await CarregarProdutos();
-                }
-                else
-                {
-                    MessageBox.Show("Erro ao excluir produto.");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro ao excluir produto: " + ex.Message);
-            }
-        }
+        }        
 
         private void btnCadastrarProduto_Click(object sender, EventArgs e)
         {
             frmCadastroProdutos inicio = new frmCadastroProdutos();
+            inicio.ProdutosAtualizados += async (s, ev) => await CarregarProdutos();
             inicio.Show();
         }
 
-        private void btnEditarProduto_Click(object sender, EventArgs e)
+        private async void btnEditarProduto_Click(object sender, EventArgs e)
         {
             frmEditarProduto editar = new frmEditarProduto();
+            editar.ProdutosAtualizados += async (s, ev) => await CarregarProdutos();
             editar.Show();
         }
     }

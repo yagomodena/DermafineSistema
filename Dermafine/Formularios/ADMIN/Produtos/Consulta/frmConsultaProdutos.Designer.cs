@@ -32,10 +32,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbCategoriaProdutos = new System.Windows.Forms.ComboBox();
+            this.btnEditarProduto = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnCadastrarProduto = new System.Windows.Forms.Button();
             this.dgvProdutos = new System.Windows.Forms.DataGridView();
-            this.btnEditarProduto = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
@@ -43,7 +43,6 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnEditarProduto);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.cmbCategoriaProdutos);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -75,9 +74,23 @@
             this.cmbCategoriaProdutos.TabIndex = 4;
             this.cmbCategoriaProdutos.SelectedIndexChanged += new System.EventHandler(this.cmbCategoriaProdutos_SelectedIndexChanged);
             // 
+            // btnEditarProduto
+            // 
+            this.btnEditarProduto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditarProduto.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnEditarProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarProduto.Location = new System.Drawing.Point(288, 0);
+            this.btnEditarProduto.Name = "btnEditarProduto";
+            this.btnEditarProduto.Size = new System.Drawing.Size(155, 56);
+            this.btnEditarProduto.TabIndex = 6;
+            this.btnEditarProduto.Text = "Editar Produto";
+            this.btnEditarProduto.UseVisualStyleBackColor = true;
+            this.btnEditarProduto.Click += new System.EventHandler(this.btnEditarProduto_Click);
+            // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.btnEditarProduto);
             this.panel2.Controls.Add(this.btnCadastrarProduto);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 315);
@@ -91,10 +104,10 @@
             this.btnCadastrarProduto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCadastrarProduto.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnCadastrarProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastrarProduto.Location = new System.Drawing.Point(474, 0);
+            this.btnCadastrarProduto.Location = new System.Drawing.Point(443, 0);
             this.btnCadastrarProduto.Margin = new System.Windows.Forms.Padding(2);
             this.btnCadastrarProduto.Name = "btnCadastrarProduto";
-            this.btnCadastrarProduto.Size = new System.Drawing.Size(124, 56);
+            this.btnCadastrarProduto.Size = new System.Drawing.Size(155, 56);
             this.btnCadastrarProduto.TabIndex = 6;
             this.btnCadastrarProduto.Text = "Cadastrar Produto";
             this.btnCadastrarProduto.UseVisualStyleBackColor = true;
@@ -114,16 +127,6 @@
             this.dgvProdutos.Size = new System.Drawing.Size(600, 244);
             this.dgvProdutos.TabIndex = 2;
             // 
-            // btnEditarProduto
-            // 
-            this.btnEditarProduto.Location = new System.Drawing.Point(409, 30);
-            this.btnEditarProduto.Name = "btnEditarProduto";
-            this.btnEditarProduto.Size = new System.Drawing.Size(75, 23);
-            this.btnEditarProduto.TabIndex = 6;
-            this.btnEditarProduto.Text = "editar";
-            this.btnEditarProduto.UseVisualStyleBackColor = true;
-            this.btnEditarProduto.Click += new System.EventHandler(this.btnEditarProduto_Click);
-            // 
             // frmConsultaProdutos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -138,6 +141,7 @@
             this.Name = "frmConsultaProdutos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ADMIN DERMAFINE - CONSULTA DE PRODUTOS";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmConsultaProdutos_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

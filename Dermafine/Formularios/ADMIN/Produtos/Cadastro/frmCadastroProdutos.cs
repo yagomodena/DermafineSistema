@@ -10,6 +10,7 @@ namespace Dermafine.Formularios.ADMIN.Produtos.Cadastro
 {
     public partial class frmCadastroProdutos : Form
     {
+        public event EventHandler ProdutosAtualizados;
 
         Thread t1;
         IFirebaseConfig config = new FirebaseConfig()
@@ -37,7 +38,7 @@ namespace Dermafine.Formularios.ADMIN.Produtos.Cadastro
             {
                 NomeProduto = txtNomeProduto.Text,
                 Categoria = cmbCategoriaProduto.Text,
-                Pontuacao = (int)numPontuacao.Value // Captura a pontuação do campo numPontuacao
+                Pontuacao = (int)numPontuacao.Value
             };
 
             try
@@ -57,7 +58,9 @@ namespace Dermafine.Formularios.ADMIN.Produtos.Cadastro
                         MessageBox.Show("Produto cadastrado com sucesso!");
 
                         // Limpar os campos após o cadastro
-                        LimparCampos();
+                        //LimparCampos();
+                        ProdutosAtualizados?.Invoke(this, EventArgs.Empty);
+                        this.Close();
                     }
                     else
                     {
