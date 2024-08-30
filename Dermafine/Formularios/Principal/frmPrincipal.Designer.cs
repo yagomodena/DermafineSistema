@@ -45,14 +45,14 @@
             this.panelTopo = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panelExibir = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.panelTopo.SuspendLayout();
             this.panelExibir.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // btnProdutos
@@ -270,7 +270,7 @@
             // 
             // panelExibir
             // 
-            this.panelExibir.Controls.Add(this.pictureBox1);
+            this.panelExibir.Controls.Add(this.pictureBox2);
             this.panelExibir.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelExibir.Location = new System.Drawing.Point(165, 89);
             this.panelExibir.Margin = new System.Windows.Forms.Padding(2);
@@ -278,16 +278,15 @@
             this.panelExibir.Size = new System.Drawing.Size(896, 432);
             this.panelExibir.TabIndex = 5;
             // 
-            // pictureBox1
+            // pictureBox2
             // 
-            this.pictureBox1.Image = global::Dermafine.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(164, 57);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(568, 275);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(896, 432);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
             // 
             // frmPrincipal
             // 
@@ -314,7 +313,7 @@
             this.panelTopo.ResumeLayout(false);
             this.panelTopo.PerformLayout();
             this.panelExibir.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -334,8 +333,8 @@
         private System.Windows.Forms.Panel panelExibir;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblNomeUsuario;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblPontuacao;
         private System.Windows.Forms.Label lblPontuacaoTotal;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
