@@ -281,7 +281,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Dermafine.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(179, 57);
+            this.pictureBox1.Location = new System.Drawing.Point(164, 57);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(568, 275);
