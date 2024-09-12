@@ -78,7 +78,7 @@
             // pictureCilios
             // 
             this.pictureCilios.Cursor = System.Windows.Forms.Cursors.Help;
-            this.pictureCilios.Image = global::Dermafine.Properties.Resources.Tricoderm_Cílios_e_Sobrancelhas;
+            this.pictureCilios.Image = global::Dermafine.Properties.Resources._7A3A5815_removebg_preview;
             this.pictureCilios.Location = new System.Drawing.Point(122, 50);
             this.pictureCilios.Margin = new System.Windows.Forms.Padding(2);
             this.pictureCilios.Name = "pictureCilios";

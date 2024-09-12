@@ -52,7 +52,7 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(513, 293);
             this.panel1.TabIndex = 11;
@@ -65,7 +65,7 @@
             this.panel3.Controls.Add(this.label4);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(245, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(264, 293);
             this.panel3.TabIndex = 18;
@@ -85,9 +85,9 @@
             // pictureSkinCream
             // 
             this.pictureSkinCream.Cursor = System.Windows.Forms.Cursors.Help;
-            this.pictureSkinCream.Image = global::Dermafine.Properties.Resources.Skin_Cream_Ureia_3_;
+            this.pictureSkinCream.Image = global::Dermafine.Properties.Resources._7A3A5942_removebg_preview;
             this.pictureSkinCream.Location = new System.Drawing.Point(48, 34);
-            this.pictureSkinCream.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureSkinCream.Margin = new System.Windows.Forms.Padding(2);
             this.pictureSkinCream.Name = "pictureSkinCream";
             this.pictureSkinCream.Size = new System.Drawing.Size(168, 193);
             this.pictureSkinCream.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -114,7 +114,7 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(245, 293);
             this.panel2.TabIndex = 17;
@@ -136,7 +136,7 @@
             this.pictureLinhaSaphis.Cursor = System.Windows.Forms.Cursors.Help;
             this.pictureLinhaSaphis.Image = global::Dermafine.Properties.Resources.Extrem_Derme_Corpo_240ml;
             this.pictureLinhaSaphis.Location = new System.Drawing.Point(25, 34);
-            this.pictureLinhaSaphis.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureLinhaSaphis.Margin = new System.Windows.Forms.Padding(2);
             this.pictureLinhaSaphis.Name = "pictureLinhaSaphis";
             this.pictureLinhaSaphis.Size = new System.Drawing.Size(168, 193);
             this.pictureLinhaSaphis.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -164,7 +164,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(529, 332);
             this.Name = "frmHidratacaoCorporal";

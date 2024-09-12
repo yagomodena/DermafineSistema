@@ -33,36 +33,36 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
-            this.pictureFineSoapPeleOleosa = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.pictureFineSoapPeleSeca = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.pictureSaphisAge = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.pictureSaphisC = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.pictureSaphisClear = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.pictureExtremDerme = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureSaphisClear = new System.Windows.Forms.PictureBox();
+            this.pictureSaphisC = new System.Windows.Forms.PictureBox();
+            this.pictureSaphisAge = new System.Windows.Forms.PictureBox();
+            this.pictureExtremDerme = new System.Windows.Forms.PictureBox();
+            this.pictureFineSoapPeleSeca = new System.Windows.Forms.PictureBox();
+            this.pictureFineSoapPeleOleosa = new System.Windows.Forms.PictureBox();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureFineSoapPeleOleosa)).BeginInit();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureFineSoapPeleSeca)).BeginInit();
             this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureSaphisAge)).BeginInit();
             this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureSaphisC)).BeginInit();
             this.panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureSaphisClear)).BeginInit();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureExtremDerme)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureSaphisClear)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureSaphisC)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureSaphisAge)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureExtremDerme)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFineSoapPeleSeca)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFineSoapPeleOleosa)).BeginInit();
             this.SuspendLayout();
             // 
             // label9
@@ -113,19 +113,6 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "clique na imagem do produto para";
             // 
-            // pictureFineSoapPeleOleosa
-            // 
-            this.pictureFineSoapPeleOleosa.Cursor = System.Windows.Forms.Cursors.Help;
-            this.pictureFineSoapPeleOleosa.Image = global::Dermafine.Properties.Resources.Fine_Soap_Pele_Oleosa_300ml;
-            this.pictureFineSoapPeleOleosa.Location = new System.Drawing.Point(48, 34);
-            this.pictureFineSoapPeleOleosa.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureFineSoapPeleOleosa.Name = "pictureFineSoapPeleOleosa";
-            this.pictureFineSoapPeleOleosa.Size = new System.Drawing.Size(168, 193);
-            this.pictureFineSoapPeleOleosa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureFineSoapPeleOleosa.TabIndex = 2;
-            this.pictureFineSoapPeleOleosa.TabStop = false;
-            this.pictureFineSoapPeleOleosa.Click += new System.EventHandler(this.pictureFineSoapPeleOleosa_Click);
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -150,19 +137,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(267, 270);
             this.panel4.TabIndex = 18;
-            // 
-            // pictureFineSoapPeleSeca
-            // 
-            this.pictureFineSoapPeleSeca.Cursor = System.Windows.Forms.Cursors.Help;
-            this.pictureFineSoapPeleSeca.Image = global::Dermafine.Properties.Resources.Fine_Soap_Pele_Seca_300ml;
-            this.pictureFineSoapPeleSeca.Location = new System.Drawing.Point(49, 34);
-            this.pictureFineSoapPeleSeca.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureFineSoapPeleSeca.Name = "pictureFineSoapPeleSeca";
-            this.pictureFineSoapPeleSeca.Size = new System.Drawing.Size(168, 193);
-            this.pictureFineSoapPeleSeca.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureFineSoapPeleSeca.TabIndex = 8;
-            this.pictureFineSoapPeleSeca.TabStop = false;
-            this.pictureFineSoapPeleSeca.Click += new System.EventHandler(this.pictureFineSoapPeleSeca_Click);
             // 
             // label2
             // 
@@ -198,19 +172,6 @@
             this.panel6.Size = new System.Drawing.Size(222, 270);
             this.panel6.TabIndex = 19;
             // 
-            // pictureSaphisAge
-            // 
-            this.pictureSaphisAge.Cursor = System.Windows.Forms.Cursors.Help;
-            this.pictureSaphisAge.Image = global::Dermafine.Properties.Resources.Saphis_Age_30g;
-            this.pictureSaphisAge.Location = new System.Drawing.Point(27, 34);
-            this.pictureSaphisAge.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureSaphisAge.Name = "pictureSaphisAge";
-            this.pictureSaphisAge.Size = new System.Drawing.Size(168, 193);
-            this.pictureSaphisAge.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureSaphisAge.TabIndex = 12;
-            this.pictureSaphisAge.TabStop = false;
-            this.pictureSaphisAge.Click += new System.EventHandler(this.pictureSaphisAge_Click);
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -233,19 +194,6 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(222, 270);
             this.panel7.TabIndex = 20;
-            // 
-            // pictureSaphisC
-            // 
-            this.pictureSaphisC.Cursor = System.Windows.Forms.Cursors.Help;
-            this.pictureSaphisC.Image = global::Dermafine.Properties.Resources.Saphis_C__Vitamina_C_;
-            this.pictureSaphisC.Location = new System.Drawing.Point(33, 34);
-            this.pictureSaphisC.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureSaphisC.Name = "pictureSaphisC";
-            this.pictureSaphisC.Size = new System.Drawing.Size(168, 193);
-            this.pictureSaphisC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureSaphisC.TabIndex = 12;
-            this.pictureSaphisC.TabStop = false;
-            this.pictureSaphisC.Click += new System.EventHandler(this.pictureSaphisC_Click);
             // 
             // label8
             // 
@@ -270,19 +218,6 @@
             this.panel8.Size = new System.Drawing.Size(229, 270);
             this.panel8.TabIndex = 20;
             // 
-            // pictureSaphisClear
-            // 
-            this.pictureSaphisClear.Cursor = System.Windows.Forms.Cursors.Help;
-            this.pictureSaphisClear.Image = global::Dermafine.Properties.Resources.Saphis_Clear_30g_2;
-            this.pictureSaphisClear.Location = new System.Drawing.Point(29, 34);
-            this.pictureSaphisClear.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureSaphisClear.Name = "pictureSaphisClear";
-            this.pictureSaphisClear.Size = new System.Drawing.Size(168, 193);
-            this.pictureSaphisClear.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureSaphisClear.TabIndex = 14;
-            this.pictureSaphisClear.TabStop = false;
-            this.pictureSaphisClear.Click += new System.EventHandler(this.pictureSaphisClear_Click);
-            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.White;
@@ -294,19 +229,6 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(251, 270);
             this.panel5.TabIndex = 19;
-            // 
-            // pictureExtremDerme
-            // 
-            this.pictureExtremDerme.Cursor = System.Windows.Forms.Cursors.Help;
-            this.pictureExtremDerme.Image = global::Dermafine.Properties.Resources.Extrem_Derme_Facial_60ml;
-            this.pictureExtremDerme.Location = new System.Drawing.Point(44, 34);
-            this.pictureExtremDerme.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureExtremDerme.Name = "pictureExtremDerme";
-            this.pictureExtremDerme.Size = new System.Drawing.Size(168, 193);
-            this.pictureExtremDerme.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureExtremDerme.TabIndex = 9;
-            this.pictureExtremDerme.TabStop = false;
-            this.pictureExtremDerme.Click += new System.EventHandler(this.pictureExtremDerme_Click);
             // 
             // panel1
             // 
@@ -321,41 +243,120 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(978, 287);
+            this.panel1.Size = new System.Drawing.Size(1005, 287);
             this.panel1.TabIndex = 10;
+            // 
+            // pictureSaphisClear
+            // 
+            this.pictureSaphisClear.Cursor = System.Windows.Forms.Cursors.Help;
+            this.pictureSaphisClear.Image = global::Dermafine.Properties.Resources._7A3A5859_removebg_preview;
+            this.pictureSaphisClear.Location = new System.Drawing.Point(29, 34);
+            this.pictureSaphisClear.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureSaphisClear.Name = "pictureSaphisClear";
+            this.pictureSaphisClear.Size = new System.Drawing.Size(168, 193);
+            this.pictureSaphisClear.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureSaphisClear.TabIndex = 14;
+            this.pictureSaphisClear.TabStop = false;
+            this.pictureSaphisClear.Click += new System.EventHandler(this.pictureSaphisClear_Click);
+            // 
+            // pictureSaphisC
+            // 
+            this.pictureSaphisC.Cursor = System.Windows.Forms.Cursors.Help;
+            this.pictureSaphisC.Image = global::Dermafine.Properties.Resources._7A3A5849_removebg_preview;
+            this.pictureSaphisC.Location = new System.Drawing.Point(33, 34);
+            this.pictureSaphisC.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureSaphisC.Name = "pictureSaphisC";
+            this.pictureSaphisC.Size = new System.Drawing.Size(168, 193);
+            this.pictureSaphisC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureSaphisC.TabIndex = 12;
+            this.pictureSaphisC.TabStop = false;
+            this.pictureSaphisC.Click += new System.EventHandler(this.pictureSaphisC_Click);
+            // 
+            // pictureSaphisAge
+            // 
+            this.pictureSaphisAge.Cursor = System.Windows.Forms.Cursors.Help;
+            this.pictureSaphisAge.Image = global::Dermafine.Properties.Resources._7A3A5866_removebg_preview;
+            this.pictureSaphisAge.Location = new System.Drawing.Point(27, 34);
+            this.pictureSaphisAge.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureSaphisAge.Name = "pictureSaphisAge";
+            this.pictureSaphisAge.Size = new System.Drawing.Size(168, 193);
+            this.pictureSaphisAge.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureSaphisAge.TabIndex = 12;
+            this.pictureSaphisAge.TabStop = false;
+            this.pictureSaphisAge.Click += new System.EventHandler(this.pictureSaphisAge_Click);
+            // 
+            // pictureExtremDerme
+            // 
+            this.pictureExtremDerme.Cursor = System.Windows.Forms.Cursors.Help;
+            this.pictureExtremDerme.Image = global::Dermafine.Properties.Resources.Extrem_Derme_Facial_60ml;
+            this.pictureExtremDerme.Location = new System.Drawing.Point(44, 34);
+            this.pictureExtremDerme.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureExtremDerme.Name = "pictureExtremDerme";
+            this.pictureExtremDerme.Size = new System.Drawing.Size(168, 193);
+            this.pictureExtremDerme.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureExtremDerme.TabIndex = 9;
+            this.pictureExtremDerme.TabStop = false;
+            this.pictureExtremDerme.Click += new System.EventHandler(this.pictureExtremDerme_Click);
+            // 
+            // pictureFineSoapPeleSeca
+            // 
+            this.pictureFineSoapPeleSeca.Cursor = System.Windows.Forms.Cursors.Help;
+            this.pictureFineSoapPeleSeca.Image = global::Dermafine.Properties.Resources._7A3A5908_removebg_preview;
+            this.pictureFineSoapPeleSeca.Location = new System.Drawing.Point(49, 34);
+            this.pictureFineSoapPeleSeca.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureFineSoapPeleSeca.Name = "pictureFineSoapPeleSeca";
+            this.pictureFineSoapPeleSeca.Size = new System.Drawing.Size(168, 193);
+            this.pictureFineSoapPeleSeca.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureFineSoapPeleSeca.TabIndex = 8;
+            this.pictureFineSoapPeleSeca.TabStop = false;
+            this.pictureFineSoapPeleSeca.Click += new System.EventHandler(this.pictureFineSoapPeleSeca_Click);
+            // 
+            // pictureFineSoapPeleOleosa
+            // 
+            this.pictureFineSoapPeleOleosa.Cursor = System.Windows.Forms.Cursors.Help;
+            this.pictureFineSoapPeleOleosa.Image = global::Dermafine.Properties.Resources._7A3A5910_removebg_preview;
+            this.pictureFineSoapPeleOleosa.Location = new System.Drawing.Point(48, 34);
+            this.pictureFineSoapPeleOleosa.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureFineSoapPeleOleosa.Name = "pictureFineSoapPeleOleosa";
+            this.pictureFineSoapPeleOleosa.Size = new System.Drawing.Size(168, 193);
+            this.pictureFineSoapPeleOleosa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureFineSoapPeleOleosa.TabIndex = 2;
+            this.pictureFineSoapPeleOleosa.TabStop = false;
+            this.pictureFineSoapPeleOleosa.Click += new System.EventHandler(this.pictureFineSoapPeleOleosa_Click);
             // 
             // frmCuidadosFaciais
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(978, 287);
+            this.ClientSize = new System.Drawing.Size(1005, 287);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(1025, 330);
             this.Name = "frmCuidadosFaciais";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DERMAFINE - Cuidados Faciais";
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureFineSoapPeleOleosa)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureFineSoapPeleSeca)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureSaphisAge)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureSaphisC)).EndInit();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureSaphisClear)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureExtremDerme)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureSaphisClear)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureSaphisC)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureSaphisAge)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureExtremDerme)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFineSoapPeleSeca)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFineSoapPeleOleosa)).EndInit();
             this.ResumeLayout(false);
 
         }

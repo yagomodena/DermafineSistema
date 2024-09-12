@@ -599,6 +599,26 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logo-removebg-preview.ico" />
+    <None Include="Resources\7A3A5940-removebg-preview.png" />
+    <None Include="Resources\7A3A5814-removebg-preview.png" />
+    <None Include="Resources\7A3A5930-removebg-preview.png" />
+    <None Include="Resources\7A3A5926-removebg-preview.png" />
+    <None Include="Resources\7A3A5942-removebg-preview.png" />
+    <None Include="Resources\7A3A5859-removebg-preview.png" />
+    <None Include="Resources\7A3A5849-removebg-preview.png" />
+    <None Include="Resources\7A3A5934-removebg-preview.png" />
+    <None Include="Resources\7A3A5934.jpg" />
+    <None Include="Resources\7A3A5866-removebg-preview.png" />
+    <None Include="Resources\7A3A5870-removebg-preview.png" />
+    <None Include="Resources\7A3A5908-removebg-preview.png" />
+    <None Include="Resources\7A3A5910-removebg-preview.png" />
+    <None Include="Resources\7A3A5910.jpg" />
+    <None Include="Resources\7A3A5815-removebg-preview.png" />
+    <None Include="Resources\7A3A5828-removebg-preview.png" />
+    <None Include="Resources\7A3A5814.jpg" />
+    <None Include="Resources\7A3A5805-removebg-preview.png" />
+    <None Include="Resources\7A3A5940.jpg" />
+    <None Include="Resources\7A3A5936-removebg-preview.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />

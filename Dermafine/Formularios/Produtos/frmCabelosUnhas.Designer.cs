@@ -84,7 +84,7 @@
             // pictureFineCeto
             // 
             this.pictureFineCeto.Cursor = System.Windows.Forms.Cursors.Help;
-            this.pictureFineCeto.Image = global::Dermafine.Properties.Resources.Shampoo_Anti_Caspa;
+            this.pictureFineCeto.Image = global::Dermafine.Properties.Resources._7A3A5934_removebg_preview;
             this.pictureFineCeto.Location = new System.Drawing.Point(33, 34);
             this.pictureFineCeto.Margin = new System.Windows.Forms.Padding(2);
             this.pictureFineCeto.Name = "pictureFineCeto";
@@ -120,7 +120,7 @@
             // pictureTricoDermShampoo
             // 
             this.pictureTricoDermShampoo.Cursor = System.Windows.Forms.Cursors.Help;
-            this.pictureTricoDermShampoo.Image = global::Dermafine.Properties.Resources.TricoDerm_Shampoo_200ml1;
+            this.pictureTricoDermShampoo.Image = global::Dermafine.Properties.Resources._7A3A5828_removebg_preview;
             this.pictureTricoDermShampoo.Location = new System.Drawing.Point(27, 34);
             this.pictureTricoDermShampoo.Margin = new System.Windows.Forms.Padding(2);
             this.pictureTricoDermShampoo.Name = "pictureTricoDermShampoo";
@@ -169,7 +169,7 @@
             // pictureUnissy
             // 
             this.pictureUnissy.Cursor = System.Windows.Forms.Cursors.Help;
-            this.pictureUnissy.Image = global::Dermafine.Properties.Resources.Unissy__Cabelos_e_Unhas;
+            this.pictureUnissy.Image = global::Dermafine.Properties.Resources._7A3A5814_removebg_preview;
             this.pictureUnissy.Location = new System.Drawing.Point(30, 34);
             this.pictureUnissy.Margin = new System.Windows.Forms.Padding(2);
             this.pictureUnissy.Name = "pictureUnissy";
@@ -218,7 +218,7 @@
             // pictureTricodermTonico
             // 
             this.pictureTricodermTonico.Cursor = System.Windows.Forms.Cursors.Help;
-            this.pictureTricodermTonico.Image = global::Dermafine.Properties.Resources.TricoDerm_Tônico_100ml;
+            this.pictureTricodermTonico.Image = global::Dermafine.Properties.Resources._7A3A5805_removebg_preview;
             this.pictureTricodermTonico.Location = new System.Drawing.Point(25, 34);
             this.pictureTricodermTonico.Margin = new System.Windows.Forms.Padding(2);
             this.pictureTricodermTonico.Name = "pictureTricodermTonico";
